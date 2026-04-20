@@ -6,7 +6,7 @@
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?style=flat&logo=linkedin&logoColor=white)](https://linkedin.com/in/mirza-uzaif-baig-a78556289)
 [![Email](https://img.shields.io/badge/Email-D14836?style=flat&logo=gmail&logoColor=white)](mailto:mirzauzaif07@gmail.com)
 [![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?style=flat&logo=Instagram&logoColor=white)](https://instagram.com/uzzzaif)
-[![Portfolio](https://img.shields.io/badge/Portfolio-ff0000?style=flat&spider&logoColor=black)](https://github.com/uzzzaif/uzaif-spiderman-portfolio)
+[![Portfolio](https://img.shields.io/badge/Portfolio-ff0000?style=flat&spider&logoColor=black)](https://uzzzaif.github.io/uzaif-spiderman-portfolio/)
 
 </div>
 
