@@ -1,0 +1,665 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Uzaif — AI & ML Developer</title>
+    <meta
+      name="description"
+      content="Uzaif — AI & Machine Learning undergraduate, builder, and problem solver. Explore projects, skills, and contact."
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Animated background canvas -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Scroll progress bar -->
+    <div id="scroll-bar"></div>
+
+    <!-- ── NAVIGATION ── -->
+    <nav id="navbar">
+      <div class="nav-inner">
+        <a href="#hero" class="nav-logo">UZAIF<span>.</span></a>
+        <div class="nav-links" id="nav-links">
+          <a href="#about" class="nav-link">About</a>
+          <a href="#skills" class="nav-link">Skills</a>
+          <a href="#resume" class="nav-link">Resume</a>
+          <a href="#projects" class="nav-link">Projects</a>
+          <a href="#automation" class="nav-link">Automation</a>
+          <a href="#experience" class="nav-link">Journey</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </div>
+        <div class="nav-right">
+          <button id="theme-toggle" aria-label="Toggle theme">
+            <i class="fas fa-sun" id="theme-icon"></i>
+          </button>
+          <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ── HERO ── -->
+    <section id="hero">
+      <div class="hero-content">
+        <div class="hero-eyebrow reveal">
+          <span class="dot"></span> AI &amp; Machine Learning Developer
+        </div>
+        <h1 class="hero-name reveal">
+          <span class="line">Mirza</span>
+          <span class="line accent-line"
+            >Uzaif</span>
+          <span class="line">Baig<span class="accent-dot">.</span>
+        </h1>
+        <p class="hero-sub reveal">
+          B.E. undergraduate focused on breaking down complex challenges and
+          solving them with intelligent systems.<br />
+          Analytical thinker &mdash; practical builder &mdash; continuous
+          learner.
+        </p>
+        <div class="hero-ctas reveal">
+          <a href="#projects" class="btn btn-primary"
+            >View Projects <i class="fas fa-arrow-down"></i
+          ></a>
+          <a href="#resume" class="btn btn-outline"
+            >View Resume<i class="fas fa-file"></i
+          ></a>
+        </div>
+        <div class="hero-links reveal">
+          <a
+            href="https://github.com/uzzzaif"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+            ><i class="fab fa-github"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/in/mirza-uzaif-baig-a78556289/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+          <a
+            href="https://www.instagram.com/uzzzaif/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a href="mailto:mirzauzaif07@gmail.com" aria-label="Email"
+            ><i class="fas fa-envelope"></i
+          ></a>
+        </div>
+      </div>
+      <div class="hero-visual reveal">
+        <div class="avatar-ring">
+          <div class="avatar-inner">
+            <span>AI</span>
+          </div>
+          <div class="orbit orbit-1"><div class="orb"></div></div>
+          <div class="orbit orbit-2"><div class="orb"></div></div>
+          <div class="orbit orbit-3"><div class="orb"></div></div>
+        </div>
+      </div>
+      <a href="#about" class="scroll-hint" aria-label="Scroll down">
+        <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+        <span>Scroll</span>
+      </a>
+    </section>
+
+    <!-- ── ABOUT ── -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-label reveal">// 01 — About Me</div>
+        <div class="about-grid">
+          <div class="about-text reveal">
+            <h2 class="section-title">
+              Hello, <span class="accent">World.</span>
+            </h2>
+            <p>
+              I'm Uzaif — a curious and driven problem solver who enjoys
+              turning ambiguity into clear, working solutions. I'm a B.E.
+              undergraduate in
+              <strong>Artificial Intelligence and Machine Learning</strong>
+              focused on building practical systems that solve real-world problems.
+            </p>
+            <p>
+              My academic journey has strengthened my foundation in Data
+              Structures, Algorithms, and software development. Hands-on
+              projects have trained me to diagnose root causes, iterate fast,
+              and ship reliable solutions.
+            </p>
+            <p>
+              I'm deeply interested in
+              <strong>emerging AI technologies</strong>, but my core approach is
+              always the same: understand the problem, design with intent, and
+              deliver measurable impact. Beyond tech, I enjoy music, chess,
+              Rubik's cubes, and solving everyday logic challenges.
+            </p>
+          </div>
+          <div class="about-stats reveal">
+            <div class="stat-card">
+              <div class="stat-icon"><i class="fas fa-brain"></i></div>
+              <div class="stat-val">AI / ML</div>
+              <div class="stat-label">Core Specialization</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon"><i class="fas fa-code"></i></div>
+              <div class="stat-val">3+</div>
+              <div class="stat-label">Languages Mastered</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon"><i class="fas fa-cloud"></i></div>
+              <div class="stat-val">AWS</div>
+              <div class="stat-label">Cloud Experience</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon"><i class="fas fa-puzzle-piece"></i></div>
+              <div class="stat-val">∞</div>
+              <div class="stat-label">Problems Solved</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SKILLS ── -->
+    <section id="skills" class="section section-alt">
+      <div class="container">
+        <div class="section-label reveal">// 02 — Skills</div>
+        <h2 class="section-title reveal">
+          My <span class="accent">Arsenal</span>
+        </h2>
+        <p class="section-sub reveal">
+          Technologies and tools I use to build intelligent, scalable solutions.
+        </p>
+
+        <div class="skills-grid reveal">
+          <div class="skill-group">
+            <div class="skill-group-header">
+              <i class="fas fa-code"></i>
+              <span>Languages</span>
+            </div>
+            <div class="skill-pills">
+              <div class="skill-pill"><span class="pill-dot"></span>Python</div>
+              <div class="skill-pill"><span class="pill-dot"></span>C++</div>
+              <div class="skill-pill">
+                <span class="pill-dot"></span>JavaScript
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-group-header">
+              <i class="fas fa-brain"></i>
+              <span>AI / ML</span>
+            </div>
+            <div class="skill-pills">
+              <div class="skill-pill">
+                <span class="pill-dot"></span>Machine Learning
+              </div>
+              <div class="skill-pill">
+                <span class="pill-dot"></span>Deep Learning
+              </div>
+              <div class="skill-pill">
+                <span class="pill-dot"></span>Computer Vision
+              </div>
+              <div class="skill-pill"><span class="pill-dot"></span>YOLOv8</div>
+              <div class="skill-pill">
+                <span class="pill-dot"></span>Model Evaluation
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-group-header">
+              <i class="fas fa-wrench"></i>
+              <span>Libraries &amp; Tools</span>
+            </div>
+            <div class="skill-pills">
+              <div class="skill-pill"><span class="pill-dot"></span>OpenCV</div>
+              <div class="skill-pill"><span class="pill-dot"></span>NumPy</div>
+              <div class="skill-pill"><span class="pill-dot"></span>Pandas</div>
+              <div class="skill-pill">
+                <span class="pill-dot"></span>Jupyter Notebook
+              </div>
+              <div class="skill-pill">
+                <span class="pill-dot"></span>Google Colab
+              </div>
+              <div class="skill-pill">
+                <span class="pill-dot"></span>VS Code
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-group-header">
+              <i class="fas fa-database"></i>
+              <span>Databases</span>
+            </div>
+            <div class="skill-pills">
+              <div class="skill-pill"><span class="pill-dot"></span>MySQL</div>
+              <div class="skill-pill"><span class="pill-dot"></span>SQLite</div>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-group-header">
+              <i class="fas fa-cloud"></i>
+              <span>Cloud (AWS)</span>
+            </div>
+            <div class="skill-pills">
+              <div class="skill-pill"><span class="pill-dot"></span>EC2</div>
+              <div class="skill-pill"><span class="pill-dot"></span>S3</div>
+              <div class="skill-pill"><span class="pill-dot"></span>IAM</div>
+              <div class="skill-pill"><span class="pill-dot"></span>VPC</div>
+              <div class="skill-pill"><span class="pill-dot"></span>Lambda</div>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-group-header">
+              <i class="fas fa-lightbulb"></i>
+              <span>Core Concepts</span>
+            </div>
+            <div class="skill-pills">
+              <div class="skill-pill">
+                <span class="pill-dot"></span>Data Structures
+              </div>
+              <div class="skill-pill">
+                <span class="pill-dot"></span>Algorithms
+              </div>
+              <div class="skill-pill"><span class="pill-dot"></span>OOP</div>
+              <div class="skill-pill"><span class="pill-dot"></span>DBMS</div>
+              <div class="skill-pill">
+                <span class="pill-dot"></span>Operating Systems
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-group-header">
+              <i class="fas fa-globe"></i>
+              <span>Web</span>
+            </div>
+            <div class="skill-pills">
+              <div class="skill-pill"><span class="pill-dot"></span>HTML5</div>
+              <div class="skill-pill"><span class="pill-dot"></span>CSS3</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── RESUME ── -->
+    <section id="resume" class="section section-alt">
+      <div class="container">
+        <div class="section-label reveal">// 03 — Resume</div>
+        <h2 class="section-title reveal">
+          Snapshot of My <span class="accent">Resume</span>
+        </h2>
+        <p class="section-sub reveal">
+          A quick overview of my problem-solving strengths, technical
+          foundations, and project-focused experience.
+        </p>
+
+        <div class="resume-box reveal">
+          <ul class="resume-points">
+            <li>Problem-first approach to AI/ML and software engineering.</li>
+            <li>Strong fundamentals in DSA, OOP, DBMS, and systems thinking.</li>
+            <li>Hands-on experience building and iterating practical projects.</li>
+            <li>Comfortable with Python, C++, JavaScript, AWS, and ML tooling.</li>
+          </ul>
+          <a
+            href="Uzaif_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-primary"
+          >
+            <i class="fas fa-file-lines"></i> Open Full Resume
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── PROJECTS ── -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-label reveal">// 04 — Projects</div>
+        <h2 class="section-title reveal">
+          What I've <span class="accent">Built</span>
+        </h2>
+        <p class="section-sub reveal">
+          Practical experiments translating AI concepts into real-world
+          solutions.
+        </p>
+
+        <div class="projects-grid reveal">
+          <a
+            class="project-card"
+            href="https://github.com/uzzzaif/RuleCop-University-Violation-Detector"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="project-num">01</div>
+            <div class="project-icon-wrap">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <div class="project-body">
+              <h3>Rule-Cop</h3>
+              <p>
+                An intelligent system designed to monitor, analyze, and enforce
+                predefined university rules using computer vision and
+                automation. Leverages YOLOv8 for real-time detection.
+              </p>
+              <div class="project-tags">
+                <span>Python</span>
+                <span>YOLOv8</span>
+                <span>OpenCV</span>
+                <span>MySQL</span>
+              </div>
+            </div>
+            <div class="project-arrow">
+              <i class="fas fa-arrow-up-right-from-square"></i>
+              <span>View on GitHub</span>
+            </div>
+          </a>
+
+          <div class="project-card">
+            <div class="project-num">02</div>
+            <div class="project-icon-wrap">
+              <i class="fas fa-globe"></i>
+            </div>
+            <div class="project-body">
+              <h3>Spider-Portfolio</h3>
+              <p>
+                A Spider-Verse themed personal portfolio site featuring
+                canvas-based web animations, a custom cursor system, and
+                cinematic scroll effects — built from scratch.
+              </p>
+              <div class="project-tags">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+                <span>Canvas API</span>
+              </div>
+            </div>
+            <div class="project-links">
+              <a
+                href="https://github.com/uzzzaif/uzaif-spiderman-portfolio"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="project-link"
+              >
+                <i class="fas fa-arrow-up-right-from-square"></i>
+                <span>View on GitHub</span>
+              </a>
+              <a
+                href="https://uzzzaif.github.io/uzaif-spiderman-portfolio/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="project-link"
+              >
+                <i class="fas fa-external-link-alt"></i>
+                <span>Live View</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── AUTOMATION ── -->
+    <section id="automation" class="section">
+      <div class="container">
+        <div class="section-label reveal">// 05 — Automation</div>
+        <h2 class="section-title reveal">
+          Explore My <span class="accent">Automation Work</span>
+        </h2>
+        <p class="section-sub reveal">
+          Visit my dedicated automation platform to see workflows, systems, and
+          tools built for real-world execution.
+        </p>
+
+        <div class="automation-box reveal">
+          <p>
+            StratXAI is where I focus on building practical automation systems
+            that reduce manual effort and increase efficiency.
+          </p>
+          <a
+            href="https://stratxai.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-primary"
+          >
+            <i class="fas fa-arrow-up-right-from-square"></i> Visit StratXAI
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── EXPERIENCE / JOURNEY ── -->
+    <section id="experience" class="section section-alt">
+      <div class="container">
+        <div class="section-label reveal">// 06 — Journey</div>
+        <h2 class="section-title reveal">
+          My <span class="accent">Story</span>
+        </h2>
+
+        <div class="timeline reveal">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-tag">Education</div>
+              <h3>B.E. — Artificial Intelligence &amp; Machine Learning</h3>
+              <p>
+                Pursuing a Bachelor of Engineering with a specialization in AI
+                &amp; ML. Building strong foundations in Data Structures,
+                Algorithms, Software Development, DBMS, and Operating Systems.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-tag">Spark</div>
+              <h3>First Line of Code</h3>
+              <p>
+                Wrote a small program that worked — and couldn't stop running
+                it, modifying it, watching it change. That spark turned into a
+                passion for building things with logic and creativity.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-tag">Growth</div>
+              <h3>Learning Through Building</h3>
+              <p>
+                Spent hours debugging puzzles, shipping projects, and
+                discovering that frustration is part of growth — not a reason to
+                stop. Consistency matters more than speed.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot active-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-tag">Now</div>
+              <h3>Building Intelligent Systems</h3>
+              <p>
+                Applying AI/ML knowledge to real-world problems, exploring cloud
+                infrastructure, and continuously expanding skills in Deep
+                Learning, Computer Vision, and scalable software.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fun facts strip -->
+        <div class="facts-row reveal">
+          <div class="fact-chip">
+            <i class="fas fa-chess"></i> Chess &amp; Rubik's Cube enthusiast
+          </div>
+          <div class="fact-chip">
+            <i class="fas fa-bug"></i> Debugs problems before sleeping
+          </div>
+          <div class="fact-chip">
+            <i class="fas fa-hammer"></i> Learns by building, not just reading
+          </div>
+          <div class="fact-chip">
+            <i class="fas fa-chart-line"></i> Small improvements, big outcomes
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CONTACT ── -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="section-label reveal">// 07 — Contact</div>
+        <h2 class="section-title reveal">
+          Let's <span class="accent">Connect</span>
+        </h2>
+        <p class="section-sub reveal">
+          Have a project, opportunity, or idea to solve? Choose a subject and
+          send me a message.
+        </p>
+
+        <div class="contact-box reveal">
+          <div class="contact-left">
+            <p class="contact-prompt">Choose a subject:</p>
+            <div class="subject-options" id="subject-options">
+              <button class="subject-btn active" data-subject="Job Opportunity">
+                💼 Job Opportunity
+              </button>
+              <button
+                class="subject-btn"
+                data-subject="Freelance Project Inquiry"
+              >
+                🚀 Freelance Project
+              </button>
+              <button class="subject-btn" data-subject="Collaboration">
+                🤝 Collaboration
+              </button>
+              <button class="subject-btn" data-subject="General Inquiry">
+                💬 General Inquiry
+              </button>
+            </div>
+            <a id="email-cta" href="#" class="btn btn-primary email-btn">
+              <i class="fas fa-paper-plane"></i> Open Email Client
+            </a>
+            <p class="contact-email-display">mirzauzaif07@gmail.com</p>
+          </div>
+          <div class="contact-right">
+            <div class="contact-social-card">
+              <a
+                href="https://www.linkedin.com/in/mirza-uzaif-baig-a78556289/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-row"
+              >
+                <div class="social-icon li">
+                  <i class="fab fa-linkedin-in"></i>
+                </div>
+                <div>
+                  <div class="social-name">LinkedIn</div>
+                  <div class="social-handle">Mirza Uzaif Baig</div>
+                </div>
+                <i class="fas fa-arrow-right social-arrow"></i>
+              </a>
+              <a
+                href="https://github.com/uzzzaif"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-row"
+              >
+                <div class="social-icon gh"><i class="fab fa-github"></i></div>
+                <div>
+                  <div class="social-name">GitHub</div>
+                  <div class="social-handle">@uzzzaif</div>
+                </div>
+                <i class="fas fa-arrow-right social-arrow"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/uzzzaif/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-row"
+              >
+                <div class="social-icon ig">
+                  <i class="fab fa-instagram"></i>
+                </div>
+                <div>
+                  <div class="social-name">Instagram</div>
+                  <div class="social-handle">@uzzzaif</div>
+                </div>
+                <i class="fas fa-arrow-right social-arrow"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── FOOTER ── -->
+    <footer>
+      <div class="container footer-inner">
+        <div class="footer-brand">UZAIF<span class="accent">.</span></div>
+        <p class="footer-copy">
+          © 2026 Uzaif — Designed with curiosity &amp; code.
+        </p>
+        <div class="footer-links">
+          <a
+            href="https://github.com/uzzzaif"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+            ><i class="fab fa-github"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/in/mirza-uzaif-baig-a78556289/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+          <a
+            href="https://www.instagram.com/uzzzaif/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a href="mailto:mirzauzaif07@gmail.com" aria-label="Email"
+            ><i class="fas fa-envelope"></i
+          ></a>
+          <a href="Uzaif_Resume.pdf" target="_blank" rel="noopener noreferrer" aria-label="Resume"
+            ><i class="fas fa-file"></i
+          ></a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

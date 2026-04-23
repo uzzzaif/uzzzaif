@@ -6,7 +6,7 @@
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?style=flat&logo=linkedin&logoColor=white)](https://linkedin.com/in/mirza-uzaif-baig-a78556289)
 [![Email](https://img.shields.io/badge/Email-D14836?style=flat&logo=gmail&logoColor=white)](mailto:mirzauzaif07@gmail.com)
 [![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?style=flat&logo=Instagram&logoColor=white)](https://instagram.com/uzzzaif)
-[![Portfolio](https://img.shields.io/badge/Portfolio-ff0000?style=flat&spider&logoColor=black)](https://uzzzaif.github.io/uzaif-spiderman-portfolio/)
+[![Portfolio](https://img.shields.io/badge/Portfolio-Portfolio?style=flat&logo=devdotto&logoColor=white&colorA=2563EB&colorB=C0392B)](https://uzzzaif.github.io/uzzzaif/)
 
 </div>
 
@@ -53,6 +53,7 @@ A Spider-Verse themed portfolio built from scratch with no frameworks - just HTM
 
 **Tech:** `HTML5` `CSS3` `JavaScript` `Canvas API`  
 **Key learning:** Deep dive into browser rendering, canvas animation performance, and designing an experience rather than just a page.  
+[→ View Live Demo](https://uzzzaif.github.io/uzaif-spiderman-portfolio/)
 [→ View Repository](https://github.com/uzzzaif/uzaif-spiderman-portfolio)
 
 ---
