@@ -1,5 +1,5 @@
 /* ============================================================
-   UZAIF PORTFOLIO — script.js
+   UZAIF PORTFOLIO - script.js
    Features: theme toggle, canvas BG, scroll reveal,
              scroll progress, mobile nav, email CTA
    ============================================================ */

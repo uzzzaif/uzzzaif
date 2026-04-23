@@ -1,22 +1,24 @@
 <div align="center">
 
 # Uzaif
+
 ### Building systems that think. Solving problems that matter.
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?style=flat&logo=linkedin&logoColor=white)](https://linkedin.com/in/mirza-uzaif-baig-a78556289)
-[![Email](https://img.shields.io/badge/Email-D14836?style=flat&logo=gmail&logoColor=white)](mailto:mirzauzaif07@gmail.com)
-[![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?style=flat&logo=Instagram&logoColor=white)](https://instagram.com/uzzzaif)
-[![Portfolio](https://img.shields.io/badge/Portfolio-Portfolio?style=flat&logo=devdotto&logoColor=white&colorA=2563EB&colorB=C0392B)](https://uzzzaif.github.io/uzzzaif/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/mirza-uzaif-baig-a78556289)
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:mirzauzaif07@gmail.com)
+[![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/uzzzaif)
+[![Portfolio](https://img.shields.io/badge/Portfolio-C0392B?style=for-the-badge&logo=googlechrome&logoColor=white&labelColor=2563EB)](https://uzzzaif.github.io/uzzzaif/)
+[![Strat X AI](https://img.shields.io/badge/Strat_X_AI-7CFC00?style=for-the-badge&logo=openai&logoColor=03231f)](https://stratxai.vercel.app)
 
 </div>
 
---- 
+---
 
 ## About Me
 
 I'm an Artificial Intelligence and Machine Learning undergraduate with a strong inclination toward building practical, intelligent systems. My foundation spans Data Structures, Algorithms, and Software Development, not just academically, but through hands-on projects where theory meets real constraints.
 
-I started with a simple question: *"Can I build something like this?"* That curiosity hasn't left. What drives me now is the same thing that drove me then the satisfaction of taking a problem apart, understanding it fully, and building something that actually works.
+I started with a simple question: _"Can I build something like this?"_ That curiosity hasn't left. What drives me now is the same thing that drove me then the satisfaction of taking a problem apart, understanding it fully, and building something that actually works.
 
 ---
 
@@ -36,6 +38,7 @@ Frustration is part of the process. Patience and attention to detail are non-neg
 ## Projects
 
 ### 🛡 Rule-Cop - University Violation Detector
+
 > **Problem:** Manual monitoring of university rule compliance is slow, inconsistent, and error-prone.
 
 An intelligent detection system that automates the identification and logging of rule violations using computer vision. Built around YOLOv8 for real-time object detection, integrated with a structured database for violation tracking and reporting.
@@ -47,6 +50,7 @@ An intelligent detection system that automates the identification and logging of
 ---
 
 ### 🕷 Spider-Portfolio - Personal Portfolio Site
+
 > **Problem:** Most developer portfolios look identical. Personality and craft rarely come through.
 
 A Spider-Verse themed portfolio built from scratch with no frameworks - just HTML, CSS, and vanilla JavaScript. Features include a live canvas web animation, custom cursor, glitch typography effects, cinematic scroll transitions, and a mobile-first responsive layout.
