@@ -1118,6 +1118,57 @@ button {
   );
 }
 
+.social-icon.wa {
+  background-color: var(--surface-2);
+  color: var(--text);
+}
+
+/* WhatsApp contact box */
+.whatsapp-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px;
+  margin-top: 16px;
+  box-shadow: var(--card-shadow);
+}
+.whatsapp-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.whatsapp-head .fab {
+  color: #fff;
+  background: #25d366;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  font-size: 1.1rem;
+}
+.whatsapp-box p {
+  color: var(--text-2);
+  margin-bottom: 12px;
+}
+.whatsapp-btn {
+  background: #25d366;
+  border-color: #25d366;
+  color: #fff;
+  box-shadow: 0 6px 24px rgba(37, 211, 102, 0.12);
+}
+.whatsapp-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Make WhatsApp icons stand out green where used */
+.social-icon.wa .fa-whatsapp {
+  color: #25d366;
+}
+
 .social-name {
   font-weight: 600;
   font-size: 0.9375rem;
