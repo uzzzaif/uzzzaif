@@ -8,7 +8,7 @@
 [![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:mirzauzaif07@gmail.com)
 [![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/uzzzaif)
 [![Portfolio](https://img.shields.io/badge/Portfolio-C0392B?style=for-the-badge&logo=googlechrome&logoColor=white&labelColor=2563EB)](https://uzzzaif.github.io/uzzzaif/)
-[![Strat X AI](https://img.shields.io/badge/Strat_X_AI-7CFC00?style=for-the-badge&logo=openai&logoColor=03231f)](https://stratxai.vercel.app)
+[![BE MY AI](https://img.shields.io/badge/BE_MY_AI-7CFC00?style=for-the-badge&logo=openai&logoColor=03231f)](https://bemyai.vercel.app)
 
 </div>
 
