@@ -37,28 +37,52 @@ Frustration is part of the process. Patience and attention to detail are non-neg
 
 ## Projects
 
-### 🛡 Rule-Cop - University Violation Detector
+### 1) BrainShh - AI Mental Wellness Web App
 
-> **Problem:** Manual monitoring of university rule compliance is slow, inconsistent, and error-prone.
+AI mental wellness web app with mood tracking, journaling, breathing exercises, coping strategies, and supportive interaction flows.
 
-An intelligent detection system that automates the identification and logging of rule violations using computer vision. Built around YOLOv8 for real-time object detection, integrated with a structured database for violation tracking and reporting.
+**Tech:** `HTML5` `CSS3` `JavaScript` `Node.js` `AWS Elastic Beanstalk`  
+**Status:** Active build  
+[→ View Screenshots](https://drive.google.com/drive/folders/1CRS25jkPe_NqRZO0z3QqqCPW0kF7psd-?usp=sharing)
+
+---
+
+### 2) FuelQ - Smart Fuel Availability and Slot Booking
+
+Real-time fuel availability checker and slot booking system for riders and commuters. Selected for NAIN 2.0 funding and currently in progress.
+
+**Tech:** `Python` `MySQL` `AWS EC2` `AWS S3`  
+**Status:** In Progress (Coming Soon)
+
+---
+
+### 3) RuleCop - University Violation Detector
+
+Computer vision rule-violation detection system using YOLOv8 for live monitoring, delivering about 25 FPS throughput with 88% detection accuracy.
 
 **Tech:** `Python` `YOLOv8` `OpenCV` `MySQL`  
-**Key learning:** Gained hands-on experience with model inference pipelines, real-time video processing, and translating a policy enforcement problem into a computer vision solution.  
+**Status:** Completed prototype  
 [→ View Repository](https://github.com/uzzzaif/RuleCop-University-Violation-Detector)
 
 ---
 
-### 🕷 Spider-Portfolio - Personal Portfolio Site
+### 4) Spider-Portfolio - Personal Portfolio Site
 
-> **Problem:** Most developer portfolios look identical. Personality and craft rarely come through.
-
-A Spider-Verse themed portfolio built from scratch with no frameworks - just HTML, CSS, and vanilla JavaScript. Features include a live canvas web animation, custom cursor, glitch typography effects, cinematic scroll transitions, and a mobile-first responsive layout.
+Spider-Verse themed portfolio with Canvas API animations, cinematic scroll effects, and custom interaction styling.
 
 **Tech:** `HTML5` `CSS3` `JavaScript` `Canvas API`  
-**Key learning:** Deep dive into browser rendering, canvas animation performance, and designing an experience rather than just a page.  
+**Status:** Live  
 [→ View Live Demo](https://uzzzaif.github.io/uzaif-spiderman-portfolio/)
 [→ View Repository](https://github.com/uzzzaif/uzaif-spiderman-portfolio)
+
+---
+
+### 5) PayOff - Offline Token-Based Payment Application
+
+College major project focused on token-based offline payments, enabling transactions without continuous internet access. Backend architecture includes token generation, validation, reconciliation, and cloud-synced ledger handling.
+
+**Tech:** `Python` `MySQL` `AWS EC2` `AWS S3` `AWS RDS`  
+**Status:** In Progress (2025 - Present)
 
 ---
 

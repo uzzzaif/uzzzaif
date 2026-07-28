@@ -407,7 +407,7 @@ button {
   transform: translateY(-3px);
 }
 
-/* ── HERO VISUAL — Orbital Avatar ── */
+/* ── HERO VISUAL - Orbital Avatar ── */
 .hero-visual {
   display: flex;
   align-items: center;
@@ -883,6 +883,12 @@ button {
   gap: 12px;
 }
 
+.project-status {
+  margin-top: 8px;
+  font-size: 0.75rem;
+  color: var(--accent);
+  font-weight: 500;
+}
 .project-links {
   display: flex;
   flex-direction: column;
