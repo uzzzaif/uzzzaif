@@ -114,9 +114,9 @@
   const themeBtn  = document.getElementById("theme-toggle");
   const themeIcon = document.getElementById("theme-icon");
   const ubLogoBg  = document.getElementById("ub-logo-bg");
+  let currentLangFrame = 0;
 
   const savedTheme = localStorage.getItem("uz-theme") || "light";
-  applyTheme(savedTheme);
 
   themeBtn.addEventListener("click", () => {
     const next = html.dataset.theme === "light" ? "dark" : "light";
@@ -417,11 +417,12 @@
   const DWELL_FACTOR   = 1.8; // * 100vh per language frame
   const IDENTITY_START = 0.85; // show identity when progress >= this
 
-  let currentLangFrame  = 0;
   let identityShown     = false;
   let preloadedImages   = {};  // cache of loaded Image objects
   let preloadQueue      = [];
   let isPreloading      = false;
+
+  applyTheme(savedTheme);
 
   // Set driver height
   function setDriverHeight() {
