@@ -125,6 +125,15 @@
   });
 
   function applyTheme(t) {
+    const isInitialTheme = !html.dataset.theme;
+    if (!isInitialTheme) {
+      html.classList.add("theme-switching");
+      if (bgRafId) {
+        cancelAnimationFrame(bgRafId);
+        bgRafId = null;
+      }
+    }
+
     html.dataset.theme = t;
     themeIcon.className = t === "dark" ? "fas fa-moon" : "fas fa-sun";
     // Swap UB ambient logo
@@ -134,6 +143,17 @@
     // Update hero image for new theme
     if (currentLangFrame !== undefined) {
       setHeroFrame(currentLangFrame, false);
+    }
+    // Bust colour cache so canvas picks up new theme colours
+    invalidateColorCache();
+
+    if (!isInitialTheme) {
+      requestAnimationFrame(() => {
+        html.classList.remove("theme-switching");
+        if (!document.hidden && !prefersReducedMotion) {
+          bgRafId = requestAnimationFrame(bgLoop);
+        }
+      });
     }
   }
 
@@ -228,7 +248,7 @@
   const SHAPES = ["circle","circle","triangle","square","ring","star","triangle"];
 
   function initMicro() {
-    const count = prefersReducedMotion ? 0 : (window.innerWidth < 768 ? 15 : 28);
+    const count = prefersReducedMotion ? 0 : (window.innerWidth < 768 ? 10 : 20);
     microElements = Array.from({ length: count }, () => ({
       x:     Math.random() * W,
       baseY: Math.random() * H,
@@ -266,18 +286,32 @@
   }, { passive: true });
 
   // Get accent colour from computed CSS (theme-aware, no hardcoded hex)
+  // Cached — only recomputed on theme change
+  let _cachedAccentRGB  = null;
+  let _cachedGridColor  = null;
+
+  function invalidateColorCache() {
+    _cachedAccentRGB = null;
+    _cachedGridColor = null;
+  }
+
   function getAccentRGB() {
+    if (_cachedAccentRGB) return _cachedAccentRGB;
     const style = getComputedStyle(html);
     const raw   = style.getPropertyValue("--color-micro-element").trim();
     // raw is like "rgba(37, 99, 235, 0.12)" — extract r,g,b
     const m = raw.match(/[\d.]+/g);
-    if (m && m.length >= 3) return { r: +m[0], g: +m[1], b: +m[2] };
-    return { r: 37, g: 99, b: 235 };
+    _cachedAccentRGB = (m && m.length >= 3)
+      ? { r: +m[0], g: +m[1], b: +m[2] }
+      : { r: 37, g: 99, b: 235 };
+    return _cachedAccentRGB;
   }
   function getGridColor() {
+    if (_cachedGridColor) return _cachedGridColor;
     const style = getComputedStyle(html);
-    return style.getPropertyValue("--color-grid").trim() ||
+    _cachedGridColor = style.getPropertyValue("--color-grid").trim() ||
            "rgba(37,99,235,0.07)";
+    return _cachedGridColor;
   }
 
   function lerp(a, b, t) { return a + (b - a) * t; }
@@ -376,7 +410,7 @@
     if (document.hidden) { bgRafId = null; return; }
 
     // Lerp scroll
-    scrollCurrent = lerp(scrollCurrent, scrollTarget, 0.08);
+    scrollCurrent = lerp(scrollCurrent, scrollTarget, 0.18);
 
     ctx.clearRect(0, 0, W, H);
 
@@ -414,8 +448,8 @@
   const frameBadge  = document.getElementById("hero-frame-badge");
   const scrollCue   = document.querySelector(".hero-scroll-cue");
 
-  const DWELL_FACTOR   = 1.8; // * 100vh per language frame
-  const IDENTITY_START = 0.85; // show identity when progress >= this
+  const DWELL_FACTOR   = 0.33; // * 100vh per language frame
+  const IDENTITY_START = 0.5; // show identity when progress >= this
 
   let identityShown     = false;
   let preloadedImages   = {};  // cache of loaded Image objects
@@ -714,20 +748,14 @@
 
       // Position spokes radially
       const N   = hub.nodes.length;
-      const R   = 120;  // radius — compact for grid layout
-      const wrapW = 280;  // assumed wrap width (set by CSS min-height)
-      const cx  = wrapW / 2;
-      const cy  = 160; // vertical centre offset in 320px tall cell
+      const R   = 140;  // radius — updated for larger hub
 
       hub.nodes.forEach((name, i) => {
         const angle = (i / N) * 2 * Math.PI - Math.PI / 2;
-        const x     = cx + Math.cos(angle) * R;
-        const y     = cy + Math.sin(angle) * R;
 
         const spoke = document.createElement("div");
         spoke.className   = "spoke-node";
-        spoke.style.left  = x + "px";
-        spoke.style.top   = y + "px";
+        // positions filled in after mount via layoutSpokes()
         spoke.style.transitionDelay = (i * 0.04) + "s";
         spoke.setAttribute("role", "listitem");
         spoke.setAttribute("tabindex", "-1");
@@ -744,9 +772,26 @@
         svg.appendChild(line);
       });
 
-      // Draw SVG lines after mount
-      wrap.dataset.cx = cx;
-      wrap.dataset.cy = cy;
+      // Layout spokes around actual hub centre after DOM is ready
+      function layoutSpokes() {
+        const wRect = wrap.getBoundingClientRect();
+        const bRect = btn.getBoundingClientRect();
+        const cx = bRect.left - wRect.left + bRect.width  / 2;
+        const cy = bRect.top  - wRect.top  + bRect.height / 2;
+        wrap.dataset.cx = cx;
+        wrap.dataset.cy = cy;
+
+        const spks = spokesDiv.querySelectorAll(".spoke-node");
+        spks.forEach((spoke, i) => {
+          const angle = (i / N) * 2 * Math.PI - Math.PI / 2;
+          spoke.style.left = (cx + Math.cos(angle) * R) + "px";
+          spoke.style.top  = (cy + Math.sin(angle) * R) + "px";
+        });
+      }
+
+      // Run after paint so getBoundingClientRect is accurate
+      requestAnimationFrame(layoutSpokes);
+      window.addEventListener("resize", layoutSpokes, { passive: true });
 
       // Events
       btn.addEventListener("click",      () => toggleHub(hub.id, wrap));
