@@ -12,18 +12,32 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
+  <!-- Hero greeting-sequence fonts (18-language "Hello" text, one family per script) -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Kalam:wght@400;700&family=Baloo+Bhaijaan+2:wght@400;600&family=Baloo+Tamma+2:wght@400;600&family=Baloo+Tammudu+2:wght@400;600&family=Baloo+Paaji+2:wght@400;600&family=Baloo+Thambi+2:wght@400;600&family=ZCOOL+KuaiLe&family=Yuji+Syuku&family=Gamja+Flower&display=swap" rel="stylesheet" />
+
   <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
 
   <!-- Styles -->
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body class="is-loading">
+
+  <!--  LOADING SCREEN  -->
+  <div id="loader" aria-hidden="true">
+    <div class="loader-inner">
+      <div class="loader-logo">UZAIF<span>.</span></div>
+      <div class="loader-bar-track">
+        <div class="loader-bar-fill" id="loader-bar-fill"></div>
+      </div>
+      <div class="loader-label" id="loader-label">Loading fonts…</div>
+    </div>
+  </div>
 
   <!-- Skip link -->
   <a class="skip-link" href="#about">Skip to content</a>
 
-  <!-- ── BACKGROUND LAYERS ── -->
+  <!--  BACKGROUND LAYERS  -->
   <!-- Layer 1 + 3: canvas (grid + micro-elements) -->
   <canvas id="bg-canvas" aria-hidden="true"></canvas>
 
@@ -78,23 +92,20 @@
   <div id="hero-driver">
     <section id="hero" class="sticky-hero" aria-label="Hero — language greeting sequence">
 
-      <!-- Language image stage -->
+      <!-- Language text stage -->
       <div id="hero-lang-stage" aria-live="polite" aria-atomic="true">
-        <img id="hero-lang-img"
-             src="assets/light_languages/01_English.png"
-             alt="Hello — English"
-             width="700" height="500"
-             fetchpriority="high" />
+        <div id="hero-lang-box">
+          <span id="hero-lang-text"
+                class="lang-pacifico"
+                dir="ltr"
+                lang="en"
+                aria-label="Hello — English">Hello</span>
+        </div>
       </div>
 
       <!-- Frame badge (non-essential, decorative) -->
       <div id="hero-frame-badge" aria-hidden="true">01 / 18</div>
 
-      <!-- Scroll cue -->
-      <div class="hero-scroll-cue" aria-hidden="true">
-        <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
-        <span>Scroll</span>
-      </div>
 
       <!-- Identity overlay (revealed after sequence) -->
       <div id="hero-identity" aria-label="Mirza Uzaif Baig — AI and ML Developer">
@@ -152,9 +163,10 @@
                aria-label="LinkedIn" title="LinkedIn" role="listitem">
               <i class="fab fa-linkedin" aria-hidden="true"></i>
             </a>
-            <a href="https://bemyai.vercel.app/" target="_blank" rel="noopener noreferrer"
-               aria-label="BE MY AI" title="BE MY AI" role="listitem">
-              <i class="fas fa-cogs" aria-hidden="true"></i>
+            <a href="https://ubwebcare.vercel.app/" target="_blank" rel="noopener noreferrer"
+               aria-label="UB WebCare" title="UB WebCare" role="listitem" class="hero-link-ub">
+              <img src="assets/UB_light_trans_SVG.svg" class="ub-link-icon ub-link-icon--light" alt="" aria-hidden="true" width="20" height="20" />
+              <img src="assets/UB_dark_trans_SVG.svg"  class="ub-link-icon ub-link-icon--dark"  alt="" aria-hidden="true" width="20" height="20" />
             </a>
             <a href="https://www.instagram.com/uzzzaif/" target="_blank" rel="noopener noreferrer"
                aria-label="Instagram" title="Instagram" role="listitem">
@@ -941,6 +953,11 @@
            aria-label="GitHub" title="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
         <a href="https://www.linkedin.com/in/mirza-uzaif-baig-a78556289/" target="_blank" rel="noopener noreferrer"
            aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+        <a href="https://ubwebcare.vercel.app/" target="_blank" rel="noopener noreferrer"
+           aria-label="UB WebCare" title="UB WebCare" class="footer-link-ub">
+          <img src="assets/UB_light_trans_SVG.svg" class="ub-link-icon ub-link-icon--light" alt="" aria-hidden="true" width="18" height="18" />
+          <img src="assets/UB_dark_trans_SVG.svg"  class="ub-link-icon ub-link-icon--dark"  alt="" aria-hidden="true" width="18" height="18" />
+        </a>
         <a href="https://www.instagram.com/uzzzaif/" target="_blank" rel="noopener noreferrer"
            aria-label="Instagram" title="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
         <a href="https://api.whatsapp.com/send/?phone=919449619175&text=Let%27s+book+an+appointment&type=phone_number&app_absent=0"

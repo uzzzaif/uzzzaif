@@ -13,29 +13,33 @@
   ───────────────────────────────────────────────── */
 
   const LANGUAGES = [
-    { name: "English",    label: "01_English.png"    },
-    { name: "Hindi",      label: "02_Hindi.png"      },
-    { name: "Spanish",    label: "03_Spanish.png"    },
-    { name: "Arabic",     label: "04_Arabic.png"     },
-    { name: "Kannada",    label: "05_Kannada.png"    },
-    { name: "Japanese",   label: "06_Japanese.png"   },
-    { name: "Telugu",     label: "07_Telugu.png"     },
-    { name: "Punjabi",    label: "08_Punjabi.png"    },
-    { name: "Tamil",      label: "09_Tamil.png"      },
-    { name: "German",     label: "10_German.png"     },
-    { name: "Chinese",    label: "11_Chinese.png"    },
-    { name: "French",     label: "12_French.png"     },
-    { name: "Korean",     label: "13_Korean.png"     },
-    { name: "Italian",    label: "14_Italian.png"    },
-    { name: "Portuguese", label: "15_Portuguese.png" },
-    { name: "Russian",    label: "16_Russian.png"    },
-    { name: "Turkish",    label: "17_Turkish.png"    },
-    { name: "Indonesian", label: "18_Indonesian.png" }
+    { name: "English",    text: "Hello",       font: "lang-pacifico"      },
+    { name: "Hindi",      text: "हैलो",         font: "lang-kalam"         },
+    { name: "Spanish",    text: "Hola",        font: "lang-pacifico"      },
+    { name: "Arabic",     text: "مرحبًا",       font: "lang-baloo-bhaijaan", rtl: true },
+    { name: "Kannada",    text: "ಹಲೋ",          font: "lang-baloo-tamma"   },
+    { name: "Japanese",   text: "こんにちは",     font: "lang-yuji"          },
+    { name: "Telugu",     text: "హలో",          font: "lang-baloo-tammudu" },
+    { name: "Punjabi",    text: "ਹੈਲੋ",         font: "lang-baloo-paaji"   },
+    { name: "Tamil",      text: "ஹலோ",          font: "lang-baloo-thambi"  },
+    { name: "German",     text: "Hallo",       font: "lang-pacifico"      },
+    { name: "Chinese",    text: "你好",          font: "lang-zcool"         },
+    { name: "French",     text: "Salut",       font: "lang-pacifico"      },
+    { name: "Korean",     text: "안녕하세요",     font: "lang-gamja"         },
+    { name: "Italian",    text: "Ciao",        font: "lang-pacifico"      },
+    { name: "Portuguese", text: "Olá",         font: "lang-pacifico"      },
+    { name: "Russian",    text: "Привет",      font: "lang-pacifico"      },
+    { name: "Turkish",    text: "Merhaba",     font: "lang-pacifico"      },
+    { name: "Indonesian", text: "Halo",        font: "lang-pacifico"      }
+  ];
+
+  const ALL_LANG_FONT_CLASSES = [
+    "lang-pacifico", "lang-kalam", "lang-baloo-bhaijaan", "lang-baloo-tamma",
+    "lang-baloo-tammudu", "lang-baloo-paaji", "lang-baloo-thambi",
+    "lang-zcool", "lang-yuji", "lang-gamja"
   ];
 
   const ASSETS = {
-    lightDir: "assets/light_languages/",
-    darkDir:  "assets/dark_languages/",
     ubLight:  "assets/UB_light_trans_SVG.svg",
     ubDark:   "assets/UB_dark_trans_SVG.svg"
   };
@@ -140,10 +144,8 @@
     if (ubLogoBg) {
       ubLogoBg.src = t === "dark" ? ASSETS.ubDark : ASSETS.ubLight;
     }
-    // Update hero image for new theme
-    if (currentLangFrame !== undefined) {
-      setHeroFrame(currentLangFrame, false);
-    }
+    // Note: hero greeting text colour follows var(--accent) automatically
+    // via CSS — no JS swap needed on theme change.
     // Bust colour cache so canvas picks up new theme colours
     invalidateColorCache();
 
@@ -443,18 +445,18 @@
      HERO — LANGUAGE SCROLL SEQUENCE
   ───────────────────────────────────────────────── */
   const heroDrv     = document.getElementById("hero-driver");
-  const heroImg     = document.getElementById("hero-lang-img");
+  const heroBox     = document.getElementById("hero-lang-box");
+  const heroTxt     = document.getElementById("hero-lang-text");
   const heroIdent   = document.getElementById("hero-identity");
   const frameBadge  = document.getElementById("hero-frame-badge");
-  const scrollCue   = document.querySelector(".hero-scroll-cue");
 
   const DWELL_FACTOR   = 0.33; // * 100vh per language frame
   const IDENTITY_START = 0.5; // show identity when progress >= this
+  const FIT_MIN_PX     = 8;   // never shrink below this
+  const FIT_STEP_PX    = 2;   // shrink step per fit iteration
 
-  let identityShown     = false;
-  let preloadedImages   = {};  // cache of loaded Image objects
-  let preloadQueue      = [];
-  let isPreloading      = false;
+  let identityShown  = false;
+  let fitSizeCache    = {};   // idx -> computed font-size (px), reset on resize
 
   applyTheme(savedTheme);
 
@@ -465,128 +467,248 @@
   setDriverHeight();
   window.addEventListener("resize", setDriverHeight);
 
-  function langDir() {
-    return html.dataset.theme === "dark" ? ASSETS.darkDir : ASSETS.lightDir;
-  }
+  // Shrink the greeting's font-size until it fits inside the box on both
+  // axes, so every script (Latin, CJK, Indic, Arabic...) occupies roughly
+  // the same visual footprint. Cached per-frame so this only runs once
+  // per language per box size (recomputed on resize).
+  function fitLangText(idx) {
+    if (fitSizeCache[idx] !== undefined) return fitSizeCache[idx];
 
-  function frameSrc(idx) {
-    return langDir() + LANGUAGES[idx].label;
-  }
+    const boxRect = heroBox.getBoundingClientRect();
+    const maxW = boxRect.width * 0.78;
+    const maxH = boxRect.height * 0.6;
 
-  // Preload image by index, call cb when done (or immediately if cached)
-  function preloadFrame(idx, cb) {
-    if (idx < 0 || idx >= LANGUAGES.length) return;
-    const src = frameSrc(idx);
-    if (preloadedImages[src]) { if (cb) cb(); return; }
+    const prevTransition = heroTxt.style.transition;
+    heroTxt.style.transition = "none";
 
-    const img = new Image();
-    img.onload = img.onerror = () => {
-      preloadedImages[src] = img;
-      if (cb) cb();
-      drainQueue();
-    };
-    img.src = src;
-  }
+    let fontSize = maxH;
+    heroTxt.style.fontSize = fontSize + "px";
 
-  function drainQueue() {
-    if (isPreloading || preloadQueue.length === 0) return;
-    isPreloading = true;
-    const next = preloadQueue.shift();
-    preloadFrame(next, () => { isPreloading = false; drainQueue(); });
-  }
-
-  function queueFrames(from, to) {
-    for (let i = from; i <= Math.min(to, LANGUAGES.length - 1); i++) {
-      const src = frameSrc(i);
-      if (!preloadedImages[src] && !preloadQueue.includes(i)) {
-        preloadQueue.push(i);
-      }
+    let iterations = 0;
+    while (
+      (heroTxt.scrollWidth > maxW || heroTxt.scrollHeight > maxH) &&
+      fontSize > FIT_MIN_PX &&
+      iterations < 200
+    ) {
+      fontSize -= FIT_STEP_PX;
+      heroTxt.style.fontSize = fontSize + "px";
+      iterations++;
     }
-    drainQueue();
+
+    heroTxt.style.transition = prevTransition;
+    fitSizeCache[idx] = fontSize;
+    return fontSize;
   }
 
-  // Set the visible frame
-  function setHeroFrame(idx, animate) {
-    if (idx === currentLangFrame && !animate && html.dataset.theme) {
-      // force update on theme switch
-    }
+  // Set the visible frame: swap text + font, refit, then a quick fade-in.
+  // No clip-path / directional wipe — text stays perfectly centered and
+  // never appears to slide left or right between languages, and the
+  // fade is fast enough to keep up with rapid scrolling.
+  function setHeroFrame(idx) {
     currentLangFrame = idx;
-    const src = frameSrc(idx);
+    const lang = LANGUAGES[idx];
+    const dir  = lang.rtl ? "rtl" : "ltr";
 
-    if (animate !== false) {
-      heroImg.style.opacity = "0";
-      setTimeout(() => {
-        heroImg.src = src;
-        heroImg.alt = LANGUAGES[idx].name;
-        heroImg.style.opacity = "1";
-      }, 140);
-    } else {
-      heroImg.src = src;
-      heroImg.alt = LANGUAGES[idx].name;
-      heroImg.style.opacity = "1";
-    }
+    // Instantly hide (no transition) before content swap
+    heroTxt.style.transition = "none";
+    heroTxt.classList.remove("revealed");
+    heroTxt.setAttribute("dir", dir);
+    heroTxt.setAttribute("lang", lang.name === "English" ? "en" : "");
+    heroTxt.classList.remove(...ALL_LANG_FONT_CLASSES);
+    heroTxt.classList.add(lang.font);
+    heroTxt.textContent = lang.text;
+    heroTxt.setAttribute("aria-label", lang.text + " — " + lang.name);
+
+    heroTxt.style.fontSize = fitLangText(idx) + "px";
+
+    // Force reflow, then re-enable transition and fade in
+    void heroTxt.offsetWidth;
+    heroTxt.style.transition = "";
+    requestAnimationFrame(() => {
+      heroTxt.classList.add("revealed");
+    });
 
     if (frameBadge) {
       frameBadge.textContent =
         String(idx + 1).padStart(2, "0") + " / " + LANGUAGES.length;
     }
-    // Live region for screen readers
-    heroImg.setAttribute("aria-label", LANGUAGES[idx].name + " greeting");
-
-    // Queue ahead
-    queueFrames(idx + 1, idx + 4);
   }
 
-  // Initial frame (frame 0) — already in HTML src, just cache it
-  (function initFirstFrame() {
-    const src = frameSrc(0);
-    const cached = new Image();
-    cached.onload = () => { preloadedImages[src] = cached; };
-    cached.src    = src;
-    heroImg.src   = src;
-    queueFrames(1, 5);
+  /* ─────────────────────────────────────────────────
+     LOADING SCREEN — preload fonts + pre-cache all
+     greeting frame sizes before unlocking scroll.
+  ───────────────────────────────────────────────── */
+  const loaderEl   = document.getElementById("loader");
+  const loaderBar  = document.getElementById("loader-bar-fill");
+  const loaderLbl  = document.getElementById("loader-label");
+
+  // Lock scroll while loading
+  document.body.classList.add("is-loading");
+
+  function setLoaderProgress(pct, label) {
+    if (loaderBar) loaderBar.style.width = pct + "%";
+    if (loaderLbl) loaderLbl.textContent = label;
+  }
+
+  function dismissLoader() {
+    document.body.classList.remove("is-loading");
+    if (loaderEl) {
+      loaderEl.classList.add("loader-hidden");
+      // Remove from DOM after fade so it doesn't block pointer events
+      loaderEl.addEventListener("transitionend", () => loaderEl.remove(), { once: true });
+    }
+  }
+
+  // Pre-cache font sizes for every language frame while fonts are loading.
+  // We swap the text invisibly off-screen so there is no visual flash.
+  function preCacheAllFrames() {
+    const savedText       = heroTxt.textContent;
+    const savedClasses    = [...heroTxt.classList];
+    const savedDir        = heroTxt.getAttribute("dir");
+    const savedLang       = heroTxt.getAttribute("lang");
+    const savedVisibility = heroTxt.style.visibility;
+    const savedTransition = heroTxt.style.transition;
+
+    heroTxt.style.transition  = "none";
+    heroTxt.style.visibility  = "hidden"; // measure but stay invisible
+
+    LANGUAGES.forEach((lang, idx) => {
+      if (fitSizeCache[idx] !== undefined) return; // already cached
+      heroTxt.classList.remove(...ALL_LANG_FONT_CLASSES);
+      heroTxt.classList.add(lang.font);
+      heroTxt.textContent = lang.text;
+      heroTxt.setAttribute("dir", lang.rtl ? "rtl" : "ltr");
+      fitLangText(idx); // populates fitSizeCache[idx]
+    });
+
+    // Restore original state
+    heroTxt.classList.remove(...ALL_LANG_FONT_CLASSES);
+    savedClasses.forEach(c => heroTxt.classList.add(c));
+    heroTxt.textContent = savedText;
+    heroTxt.setAttribute("dir", savedDir || "ltr");
+    heroTxt.setAttribute("lang", savedLang || "");
+    heroTxt.style.visibility = savedVisibility;
+    heroTxt.style.transition = savedTransition;
+  }
+
+  // Main loader flow
+  (function initWithLoader() {
+    if (prefersReducedMotion) {
+      // Skip loader entirely for reduced-motion users
+      setHeroFrame(0);
+      dismissLoader();
+      return;
+    }
+
+    setLoaderProgress(10, "Loading fonts…");
+
+    const fontsReady = (document.fonts && document.fonts.ready)
+      ? document.fonts.ready
+      : Promise.resolve();
+
+    // Fake minimum display time (400 ms) so the loader never flashes too fast
+    const minDelay = new Promise(resolve => setTimeout(resolve, 400));
+
+    // Animate the bar from 10 → 70 while fonts load
+    let fakeProgress = 10;
+    const fakeTimer = setInterval(() => {
+      fakeProgress = Math.min(fakeProgress + 4, 70);
+      setLoaderProgress(fakeProgress, "Loading fonts…");
+    }, 80);
+
+    Promise.all([fontsReady, minDelay]).then(() => {
+      clearInterval(fakeTimer);
+      setLoaderProgress(80, "Preparing animations…");
+
+      // Pre-cache all frame sizes now that fonts are actually available
+      requestAnimationFrame(() => {
+        preCacheAllFrames();
+        setLoaderProgress(100, "Ready");
+
+        // Set the first frame (sizes already cached — instant)
+        setHeroFrame(0);
+
+        // Brief pause so "Ready" is readable, then fade out
+        setTimeout(dismissLoader, 220);
+      });
+    });
   })();
+
+  // Refit on resize (box size changes) — debounced, clears cache
+  let resizeFitTimer = null;
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeFitTimer);
+    resizeFitTimer = setTimeout(() => {
+      fitSizeCache = {};
+      const size = fitLangText(currentLangFrame);
+      heroTxt.style.transition = "none";
+      heroTxt.style.fontSize = size + "px";
+      void heroTxt.offsetWidth;
+      heroTxt.style.transition = "";
+    }, 150);
+  });
 
   // Reduced motion: show identity immediately, skip sequence
   if (prefersReducedMotion) {
     heroIdent.classList.add("visible");
     identityShown = true;
-    if (scrollCue)  scrollCue.style.display = "none";
     heroDrv.style.height = "100vh";
   }
 
-  // Hero scroll handler
+  // Hero scroll handler with throttling and RAF for better performance
+  let heroScrollTicking = false;
+  let cachedDrvTop = null;
+  let cachedDrvHeight = null;
+  
+  function cacheHeroMetrics() {
+    cachedDrvTop = heroDrv.getBoundingClientRect().top + window.scrollY;
+    cachedDrvHeight = heroDrv.offsetHeight - window.innerHeight;
+  }
+  cacheHeroMetrics();
+  
+  window.addEventListener("resize", () => {
+    cachedDrvTop = null;
+    cachedDrvHeight = null;
+    setTimeout(cacheHeroMetrics, 100);
+  });
+
   function onHeroScroll() {
     if (prefersReducedMotion) return;
+    
+    if (!heroScrollTicking) {
+      requestAnimationFrame(() => {
+        if (cachedDrvTop === null || cachedDrvHeight === null) {
+          cacheHeroMetrics();
+        }
 
-    const drvTop    = heroDrv.getBoundingClientRect().top + window.scrollY;
-    const drvHeight = heroDrv.offsetHeight - window.innerHeight;
-    const rawProg   = (window.scrollY - drvTop) / drvHeight;
-    const progress  = Math.max(0, Math.min(1, rawProg));
+        const drvTop    = cachedDrvTop;
+        const drvHeight = cachedDrvHeight;
+        const rawProg   = (window.scrollY - drvTop) / drvHeight;
+        const progress  = Math.max(0, Math.min(1, rawProg));
 
-    // Map progress to frame index
-    const rawFrame = progress * LANGUAGES.length;
-    const frameIdx = Math.min(Math.floor(rawFrame), LANGUAGES.length - 1);
+        // Map progress to frame index
+        const rawFrame = progress * LANGUAGES.length;
+        const frameIdx = Math.min(Math.floor(rawFrame), LANGUAGES.length - 1);
 
-    if (frameIdx !== currentLangFrame) {
-      setHeroFrame(frameIdx, true);
-    }
+        if (frameIdx !== currentLangFrame) {
+          setHeroFrame(frameIdx);
+        }
 
-    // Scroll cue: fade out once scrolled
-    if (scrollCue) {
-      scrollCue.style.opacity = progress > 0.04 ? "0" : "1";
-    }
-
-    // Identity overlay
-    if (progress >= IDENTITY_START && !identityShown) {
-      identityShown = true;
-      heroIdent.classList.add("visible");
-      heroIdent.removeAttribute("aria-hidden");
-    }
-    if (progress < IDENTITY_START - 0.05 && identityShown) {
-      identityShown = false;
-      heroIdent.classList.remove("visible");
-      heroIdent.setAttribute("aria-hidden", "true");
+        // Identity overlay
+        if (progress >= IDENTITY_START && !identityShown) {
+          identityShown = true;
+          heroIdent.classList.add("visible");
+          heroIdent.removeAttribute("aria-hidden");
+        }
+        if (progress < IDENTITY_START - 0.05 && identityShown) {
+          identityShown = false;
+          heroIdent.classList.remove("visible");
+          heroIdent.setAttribute("aria-hidden", "true");
+        }
+        
+        heroScrollTicking = false;
+      });
+      heroScrollTicking = true;
     }
   }
 
