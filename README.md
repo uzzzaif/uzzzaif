@@ -58,12 +58,12 @@ Token-based offline payment system enabling transactions without continuous inte
 
 ---
 
-### 2) FuelQ — Smart Fuel Availability & Slot Booking
-> In Progress · Selected for NAIN 2.0 Funding
+### 2) Tuguduk - Multi-Service Logistics, Mobility & Delivery Platform
 
-Real-time fuel availability checker and smart slot booking for riders and commuters.
+Developing a multi-service mobile application that integrates logistics, mobility, fuel intelligence, and delivery of daily-use items and accessories on a single platform.
 
-**Tech:** `Python` `MySQL` `AWS EC2` `AWS S3`
+**Tech:** `React Native` `VPS` `Backend Services`  
+**Status:** In Progress · NAIN 2.0, Government of Karnataka
 
 ---
 

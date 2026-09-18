@@ -8,6 +8,7 @@
 \usepackage{enumitem}
 \usepackage{tabularx}
 \usepackage{fontawesome5}
+\usepackage{needspace}
 
 \newcommand{\greyhref}[2]{%
 \href{#1}{\colorbox{gray!15}{\textcolor{black}{\strut #2}}}%
@@ -23,11 +24,9 @@
 
 \titleformat{\section}
 {\scshape\normalsize}
-{}{0em}{}[\vspace{-0.4em}\rule{\linewidth}{0.4pt}]
+{}{0em}{}[\vspace{-0.3em}\rule{\linewidth}{0.4pt}]
 
-\titlespacing*{\section}{0pt}{0.8em}{0.4em}
-
-\setlist[itemize]{leftmargin=1.2em,itemsep=1pt,topsep=1pt,parsep=0pt}
+\setlist[itemize]{leftmargin=1.2em,itemsep=2pt,topsep=2pt,parsep=0pt}
 
 \begin{document}
 
@@ -37,31 +36,32 @@
 \begin{tabularx}{\textwidth}{X r}
 
 \textbf{\LARGE Mirza Uzaif Baig} 
-& {\footnotesize \faPhone\ +91 94496 19175} \\[4pt]
+& \greyhref{tel:+919449619175}{\footnotesize \faPhone\ +91 94496 19175} \\[3pt]
+
+\textit{Developer, Builder, Problem Solver}
+& \greyhref{mailto:mirzauzaif07@gmail.com}{\footnotesize \faEnvelope\ mirzauzaif07@gmail.com} \\[3pt]
 
 Kalaburagi, Karnataka, India 
-& \greyhref{mailto:mirzauzaif07@gmail.com}{\footnotesize \faEnvelope\ mirzauzaif07@gmail.com} \\[4pt]
+& \greyhref{https://www.linkedin.com/in/mirza-uzaif-baig/}{\footnotesize \faLinkedin\ Mirza-Uzaif-Baig} \\
 
 B.E. in Artificial Intelligence \& Machine Learning 
-& \greyhref{https://www.linkedin.com/in/mirza-uzaif-baig-a78556289/}{\footnotesize \faLinkedin\ Mirza-Uzaif-Baig} \\
+& \greyhref{https://github.com/uzzzaif}{\footnotesize \faGithub\ uzzzaif} \\[3pt]
 
 Poojya Doddappa Appa College of Engineering (2023--2027)
-& \greyhref{https://github.com/uzzzaif}{\footnotesize \faGithub\ uzzzaif} \\[4pt]
-
-& \greyhref{https://uzzzaif.vercel.app}{\footnotesize \faGlobe\ Portfolio} \\[4pt]
+& \greyhref{https://uzzzaif.vercel.app}{\footnotesize \faGlobe\ Portfolio} \\[3pt]
 
 \end{tabularx}
+
 \end{center}
 
-\vspace{6pt}
+\vspace{5pt}
 \hrule
-
 
 % ================= SUMMARY =================
 
 \section{Professional Summary}
 
-AI \& ML undergraduate with practical experience building real-time computer vision systems and interactive web applications. Experienced in implementing YOLOv8-based detection pipelines, designing responsive front-end interfaces, and integrating database-backed systems. Strong interest in applied AI, web engineering, and cloud-based deployment.
+AI \& ML undergraduate and technology enthusiast focused on building practical, reliable software products. Proven problem solver with hands-on experience developing AI-powered systems, web/mobile applications, automation workflows, and cloud-ready databases. A quick learner skilled in modern development and deployment tools.
 
 % ================= EDUCATION =================
 
@@ -71,7 +71,7 @@ AI \& ML undergraduate with practical experience building real-time computer vis
 Poojya Doddappa Appa College of Engineering, Kalaburagi \\
 2023 -- 2027
 
-\vspace{4pt}
+\vspace{5pt}
 
 \textbf{Pre-University (12th Grade)} \hfill Score: 92.5\% \\
 Al-Sharay PU College, Kalaburagi \\
@@ -80,6 +80,26 @@ March 2023
 % ================= PROJECTS =================
 
 \section{Projects}
+
+\needspace{7\baselineskip}
+
+\textbf{Personal Portfolio Website} \hfill 2026 \\
+\textit{HTML5, CSS3, JavaScript, Vercel}
+
+\begin{itemize}
+
+\item Built and deployed a personal developer portfolio showcasing projects, skills, and certifications with a clean, responsive UI.
+\item Deployed on Vercel with continuous deployment linked to GitHub for seamless updates.
+
+\end{itemize}
+
+\greyhref{https://uzzzaif.vercel.app}{Live Demo}
+\quad
+\greyhref{https://github.com/uzzzaif/uzzzaif}{GitHub}
+
+\vspace{8pt}
+
+\needspace{7\baselineskip}
 
 \textbf{RuleCop - AI-Based University Violation Detection System} \hfill 2025 \\
 \textit{Python, OpenCV, YOLOv8, MySQL, Web Dashboard}
@@ -96,39 +116,9 @@ March 2023
 \quad
 \greyhref{https://github.com/uzzzaif/RuleCop-University-Violation-Detector}{GitHub}
 
+\vspace{8pt}
 
-\vspace{6pt}
-
-\textbf{Personal Portfolio Website} \hfill 2026 \\
-\textit{HTML5, CSS3, JavaScript, Vercel}
-
-\begin{itemize}
-
-\item Built and deployed a personal developer portfolio showcasing projects, skills, and certifications with a clean, responsive UI.
-\item Deployed on Vercel with continuous deployment linked to GitHub for seamless updates.
-
-\end{itemize}
-
-\greyhref{https://uzzzaif.vercel.app}{Live Demo}
-\quad
-\greyhref{https://github.com/uzzzaif/uzzzaif}{GitHub}
-
-\vspace{6pt}
-
-\textbf{Spider-Verse Developer Portfolio} \hfill 2026 \\
-\textit{HTML5, CSS3, JavaScript, Canvas API}
-
-\begin{itemize}
-
-\item Designed and deployed a fully interactive developer portfolio featuring animated UI components and dynamic visual effects.
-\item Implemented advanced front-end rendering using Canvas API and scroll-based interaction systems.
-\item Structured modular frontend architecture and deployed the application for public access.
-
-\end{itemize}
-
-\greyhref{https://uzzzaif.github.io/uzaif-spiderman-portfolio/}{Live Demo}
-
-\vspace{6pt}
+\needspace{7\baselineskip}
 
 \textbf{BrainShh - AI Mental Wellness Web Application} \hfill 2026 \\
 \textit{HTML5, CSS3, JavaScript, Node.js, AWS Elastic Beanstalk}
@@ -143,58 +133,72 @@ March 2023
 
 \greyhref{https://drive.google.com/drive/folders/1CRS25jkPe_NqRZO0z3QqqCPW0kF7psd-?usp=sharing}{Screenshots}
 
-\vspace{6pt}
+\vspace{8pt}
+
+\needspace{7\baselineskip}
 
 \textbf{PayOff - Offline Token-Based Payment Application} \hfill 2025 -- Present \\
-\textit{Python, MySQL, AWS (EC2, S3, RDS) -- In Progress}
+\textit{React Native, Expo, Node.js, Express.js, Socket.IO, Python, MySQL -- In Progress}
 
 \begin{itemize}
 
-\item Designing a token-based offline payment system enabling transactions without continuous internet connectivity.
-\item Planning cloud deployment on AWS EC2 with RDS for persistent transaction storage and S3 for secure data backups.
-\item Architecting backend services for token generation, validation, and reconciliation with cloud-synced ledger.
+\item Developing an offline-capable payment application using token-based transactions to support payments without continuous internet connectivity.
+\item Building a React Native and Expo mobile client with Node.js, Express.js, and Socket.IO backend services for transaction processing and communication.
+\item Designing a local transaction ledger and synchronization workflow to preserve transaction records and reconcile data when connectivity is restored.
+\item Implementing token generation, validation, transaction processing, and secure synchronization between application components.
 
 \end{itemize}
 
+\greyhref{https://github.com/uzzzaif/PayOff}{GitHub}
 
-\vspace{6pt}
+\vspace{8pt}
 
-\textbf{FuelQ - Smart Fuel Availability \& Slot Booking App} \hfill 2025 -- Present \\
-\textit{Python, MySQL, AWS (EC2, S3) -- In Progress} \hfill \textit{Selected for NAIN 2.0 Initial Funding}
+\needspace{7\baselineskip}
+
+\textbf{Tuguduk - Multi-Service Logistics, Mobility \& Delivery Platform} \hfill 2025 -- Present \\
+\textit{React Native, VPS, Backend Services -- In Progress} \hfill \textit{NAIN 2.0, Government of Karnataka}
 
 \begin{itemize}
 
-\item Building an application for delivery riders, drivers, and daily commuters to check real-time fuel availability and book fueling slots, reducing wait times.
-\item Selected by NAIN 2.0 for initial funding, validating the product's market potential.
-\item Planning AWS-based backend deployment for scalable slot management and real-time fuel station data integration.
+\item Developing a multi-service mobile application that integrates logistics, mobility, fuel intelligence, and delivery of daily-use items and accessories on a single platform.
+\item Building the application using React Native with service workflows for transportation, logistics, fuel availability intelligence, and on-demand delivery.
+\item Hosting and scaling backend services on a Virtual Private Server (VPS) to support centralized application infrastructure and growing service demand.
+\item Developing the project under NAIN 2.0 with support from the Government of Karnataka.
 
 \end{itemize}
-
 
 % ================= TECHNICAL SKILLS =================
 
 \section{Technical Skills}
 
-\textbf{Cloud Platforms:} AWS (EC2, S3, IAM, VPC, Lambda – Concepts) \\
+\textbf{Programming Languages:} Python, C++, JavaScript \\
+\vspace{3pt}
 
-\textbf{Programming Languages:} Python, C++, JavaScript (Basic) \\
+\textbf{AI \& Automation:} Artificial Intelligence, Agentic AI, RAG Workflows, n8n \\
+\vspace{3pt}
 
-\textbf{Cloud \& Backend Concepts:}
-Cloud Computing, Distributed Systems Basics, API Integration, Backend Processing \\
+\textbf{Cloud \& Infrastructure:} AWS (EC2, S3, IAM, VPC, Lambda -- Concepts), VPS, Cloud Deployment \\
+\vspace{3pt}
 
-\textbf{Databases:} MySQL, SQLite \\
+\textbf{Mobile \& Web Development:} React Native, HTML5, CSS3, JavaScript, Responsive Web Design \\
+\vspace{3pt}
 
-\textbf{Tools \& Platforms:}
-Git, GitHub, VS Code, Jupyter Notebook, Google Colab \\
+\textbf{Backend \& APIs:} Node.js, Express.js, REST APIs, API Integration, Backend Processing \\
+\vspace{3pt}
 
-\textbf{Libraries:}
-OpenCV, NumPy, Pandas \\
+\textbf{Databases:} MySQL, SQLite, Database Design \\
+\vspace{3pt}
 
-\textbf{Web Technologies:}
-HTML, CSS \\
+\textbf{OS \& CLI:} Linux, Bash, Command Line \\
+\vspace{3pt}
 
-\textbf{Core Computer Science:}
-Data Structures, Algorithms, DBMS, Operating Systems
+\textbf{Tools \& Platforms:} Git, GitHub, VS Code, Jupyter Notebook, Google Colab \\
+\vspace{3pt}
+
+\textbf{Libraries:} OpenCV, NumPy, Pandas \\
+\vspace{3pt}
+
+\textbf{Core Computer Science:} Data Structures, Algorithms, DBMS, Operating Systems, Computer Networks
 
 % ================= CERTIFICATIONS =================
 
@@ -203,11 +207,17 @@ Data Structures, Algorithms, DBMS, Operating Systems
 \begin{tabularx}{\textwidth}{X r}
 
 \greyhref{https://www.linkedin.com/posts/mirza-uzaif-baig-a78556289_cloud-computing-certification-nptel-activity-7469064907045412864-_CSU}{Cloud Computing} \textit{\small - NPTEL} & \small May 2026 \\
+
 \greyhref{https://www.linkedin.com/posts/mirza-uzaif-baig-a78556289_data-analytics-certificate-by-head-held-high-activity-7469064593902870528-cb7f}{Data Analytics} \textit{\small - Head Held High} & \small Apr 2026 \\[3pt]
+
 \greyhref{https://www.life-global.org/certificate/9fc21ed1-97ab-4917-bf65-4f98e4489277}{AI for Beginners} \textit{\small - HP LIFE} & \small Feb 2026 \\[3pt]
+
 \greyhref{https://www.life-global.org/certificate/95b1cf91-d9f3-4fba-b445-3048d2035997}{AI for Business Professionals} \textit{\small - HP LIFE} & \small Feb 2026 \\[3pt]
+
 \greyhref{https://www.life-global.org/certificate/8f344ec6-26c2-4ac9-bcd2-277258655c90}{Critical Thinking in the AI Era} \textit{\small - HP LIFE} & \small Feb 2026 \\[3pt]
+
 \greyhref{https://www.linkedin.com/posts/mirza-uzaif-baig-a78556289_html-and-css-ugcPost-7368903394301779968-O1z-}{HTML \& CSS} \textit{\small - Certiport} & \small Jul 2024 \\[3pt]
+
 \end{tabularx}
 
 \end{document}
