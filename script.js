@@ -1,5 +1,5 @@
 /* ============================================================
-   UZAIF PORTFOLIO — script.js
+   UZAIF PORTFOLIO - script.js
    Systems: theme, background (3-layer canvas), hero language
    sequence, navbar, scroll reveal, hub-spoke tech, project
    expand, about panels, build-flow, contact email CTA.
@@ -59,28 +59,28 @@
       id: "development",
       label: "DEVELOPMENT",
       icon: "fas fa-code",
-      nodes: ["Python","Java","C++","JavaScript","HTML","CSS","Node.js"]
+      nodes: ["Python","C++","JavaScript","HTML","CSS","Node.js","Express.js","React Native"]
     },
     {
       id: "data",
       label: "DATA",
       icon: "fas fa-database",
-      nodes: ["MySQL","PostgreSQL","SQLite","SQL","Pandas","NumPy"]
+      nodes: ["MySQL","SQLite","Redis","Database Design","Query Optimization","Data Replication","Sharding"]
     },
     {
       id: "infrastructure",
       label: "INFRASTRUCTURE",
       icon: "fas fa-cloud",
       nodes: [
-        "Linux","AWS","EC2","S3","RDS",
-        "IAM","VPC","Lambda","Git","GitHub","Hosting","Deployment","DNS"
+        "Linux","AWS","EC2","S3","IAM","VPC","Lambda",
+        "Docker","Nginx","VPS","Git","GitHub","Cloud Deployment"
       ]
     },
     {
       id: "automation",
       label: "AUTOMATION",
       icon: "fas fa-cogs",
-      nodes: ["n8n","APIs","Webhooks","Workflow Automation","WhatsApp Automation"]
+      nodes: ["n8n","APIs","Webhooks","Workflow Automation","Agentic AI","RAG Workflows"]
     },
     {
       id: "aitools",
@@ -145,7 +145,7 @@
       ubLogoBg.src = t === "dark" ? ASSETS.ubDark : ASSETS.ubLight;
     }
     // Note: hero greeting text colour follows var(--accent) automatically
-    // via CSS — no JS swap needed on theme change.
+    // via CSS - no JS swap needed on theme change.
     // Bust colour cache so canvas picks up new theme colours
     invalidateColorCache();
 
@@ -184,7 +184,7 @@
   }
 
   /* ─────────────────────────────────────────────────
-     NAVBAR — SCROLL STATE + ACTIVE LINK
+     NAVBAR - SCROLL STATE + ACTIVE LINK
   ───────────────────────────────────────────────── */
   const navbar    = document.getElementById("navbar");
   const navLinkEls = document.querySelectorAll(".nav-link");
@@ -230,7 +230,7 @@
   window.addEventListener("scroll", updateScrollBar, { passive: true });
 
   /* ─────────────────────────────────────────────────
-     BACKGROUND SYSTEM — 3-LAYER CANVAS
+     BACKGROUND SYSTEM - 3-LAYER CANVAS
   ───────────────────────────────────────────────── */
   const canvas = document.getElementById("bg-canvas");
   const ctx    = canvas.getContext("2d");
@@ -288,7 +288,7 @@
   }, { passive: true });
 
   // Get accent colour from computed CSS (theme-aware, no hardcoded hex)
-  // Cached — only recomputed on theme change
+  // Cached - only recomputed on theme change
   let _cachedAccentRGB  = null;
   let _cachedGridColor  = null;
 
@@ -301,7 +301,7 @@
     if (_cachedAccentRGB) return _cachedAccentRGB;
     const style = getComputedStyle(html);
     const raw   = style.getPropertyValue("--color-micro-element").trim();
-    // raw is like "rgba(37, 99, 235, 0.12)" — extract r,g,b
+    // raw is like "rgba(37, 99, 235, 0.12)" - extract r,g,b
     const m = raw.match(/[\d.]+/g);
     _cachedAccentRGB = (m && m.length >= 3)
       ? { r: +m[0], g: +m[1], b: +m[2] }
@@ -442,7 +442,7 @@
   }
 
   /* ─────────────────────────────────────────────────
-     HERO — LANGUAGE SCROLL SEQUENCE
+     HERO - LANGUAGE SCROLL SEQUENCE
   ───────────────────────────────────────────────── */
   const heroDrv     = document.getElementById("hero-driver");
   const heroBox     = document.getElementById("hero-lang-box");
@@ -501,7 +501,7 @@
   }
 
   // Set the visible frame: swap text + font, refit, then a quick fade-in.
-  // No clip-path / directional wipe — text stays perfectly centered and
+  // No clip-path / directional wipe - text stays perfectly centered and
   // never appears to slide left or right between languages, and the
   // fade is fast enough to keep up with rapid scrolling.
   function setHeroFrame(idx) {
@@ -517,7 +517,7 @@
     heroTxt.classList.remove(...ALL_LANG_FONT_CLASSES);
     heroTxt.classList.add(lang.font);
     heroTxt.textContent = lang.text;
-    heroTxt.setAttribute("aria-label", lang.text + " — " + lang.name);
+    heroTxt.setAttribute("aria-label", lang.text + " - " + lang.name);
 
     heroTxt.style.fontSize = fitLangText(idx) + "px";
 
@@ -535,7 +535,7 @@
   }
 
   /* ─────────────────────────────────────────────────
-     LOADING SCREEN — preload fonts + pre-cache all
+     LOADING SCREEN - preload fonts + pre-cache all
      greeting frame sizes before unlocking scroll.
   ───────────────────────────────────────────────── */
   const loaderEl   = document.getElementById("loader");
@@ -625,7 +625,7 @@
         preCacheAllFrames();
         setLoaderProgress(100, "Ready");
 
-        // Set the first frame (sizes already cached — instant)
+        // Set the first frame (sizes already cached - instant)
         setHeroFrame(0);
 
         // Brief pause so "Ready" is readable, then fade out
@@ -634,7 +634,7 @@
     });
   })();
 
-  // Refit on resize (box size changes) — debounced, clears cache
+  // Refit on resize (box size changes) - debounced, clears cache
   let resizeFitTimer = null;
   window.addEventListener("resize", () => {
     clearTimeout(resizeFitTimer);
@@ -715,7 +715,7 @@
   window.addEventListener("scroll", onHeroScroll, { passive: true });
 
   /* ─────────────────────────────────────────────────
-     SCROLL REVEAL — EXTENDED
+     SCROLL REVEAL - EXTENDED
   ───────────────────────────────────────────────── */
   const revealEls = document.querySelectorAll(".reveal, .reveal-left, .reveal-right");
 
@@ -761,7 +761,7 @@
   }
 
   /* ─────────────────────────────────────────────────
-     ABOUT — PANEL ANIMATIONS
+     ABOUT - PANEL ANIMATIONS
   ───────────────────────────────────────────────── */
 
   // Technical Breadth radial nodes
@@ -819,7 +819,7 @@
   }
 
   /* ─────────────────────────────────────────────────
-     TECH — HUB AND SPOKE
+     TECH - HUB AND SPOKE
   ───────────────────────────────────────────────── */
   const hubStage = document.getElementById("hub-stage");
 
@@ -846,7 +846,7 @@
       btn.className    = "hub-center";
       btn.setAttribute("aria-expanded", "false");
       btn.setAttribute("aria-controls", "spoke-" + hub.id);
-      btn.setAttribute("aria-label", hub.label + " — click to expand technologies");
+      btn.setAttribute("aria-label", hub.label + " - click to expand technologies");
 
       const iconEl = document.createElement("i");
       iconEl.className = hub.icon + " hub-icon";
@@ -870,7 +870,7 @@
 
       // Position spokes radially
       const N   = hub.nodes.length;
-      const R   = 140;  // radius — updated for larger hub
+      const R   = 140;  // radius - updated for larger hub
 
       hub.nodes.forEach((name, i) => {
         const angle = (i / N) * 2 * Math.PI - Math.PI / 2;
@@ -888,7 +888,7 @@
         spoke.appendChild(lbl);
         spokesDiv.appendChild(spoke);
 
-        // SVG line placeholder — drawn on open
+        // SVG line placeholder - drawn on open
         const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
         line.dataset.idx = i;
         svg.appendChild(line);
@@ -999,7 +999,7 @@
   buildHubs();
 
   /* ─────────────────────────────────────────────────
-     PROJECTS — EXPAND/COLLAPSE
+     PROJECTS - EXPAND/COLLAPSE
   ───────────────────────────────────────────────── */
   const projPanels = document.querySelectorAll(".proj-panel");
 
@@ -1044,7 +1044,7 @@
   });
 
   /* ─────────────────────────────────────────────────
-     CONTACT — EMAIL CTA SUBJECT SELECTOR
+     CONTACT - EMAIL CTA SUBJECT SELECTOR
   ───────────────────────────────────────────────── */
   const subjectBtns = document.querySelectorAll(".subject-btn");
   const emailCta    = document.getElementById("email-cta");
@@ -1068,7 +1068,7 @@
   });
 
   /* ─────────────────────────────────────────────────
-     HERO SCROLL CUE — also hide once scroll begins
+     HERO SCROLL CUE - also hide once scroll begins
   ───────────────────────────────────────────────── */
   // Already handled in onHeroScroll above
 

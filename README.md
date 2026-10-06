@@ -17,9 +17,9 @@
 
 ## About Me
 
-I'm **Mirza Uzaif Baig** — an AI & Machine Learning undergraduate, system builder, and automation engineer. My foundation spans Data Structures, Algorithms, and Software Development — not just academically, but through hands-on projects where theory meets real constraints.
+I'm **Mirza Uzaif Baig** - an AI & Machine Learning undergraduate, system builder, and automation engineer. My foundation spans Data Structures, Algorithms, and Software Development - not just academically, but through hands-on projects where theory meets real constraints.
 
-My approach is always the same: understand the problem first, design with intent, then build and iterate until it works reliably. I work across software, databases, cloud infrastructure, AI/ML pipelines, and automation — comfortable with broad technical knowledge rather than narrow expertise.
+My approach is always the same: understand the problem first, design with intent, then build and iterate until it works reliably. I work across software, databases, cloud infrastructure, AI/ML pipelines, and automation - comfortable with broad technical knowledge rather than narrow expertise.
 
 Beyond tech: chess, Rubik's cubes, music, and logic challenges sharpen the same thinking I bring to every system I build.
 
@@ -27,19 +27,19 @@ Beyond tech: chess, Rubik's cubes, music, and logic challenges sharpen the same 
 
 ## Portfolio
 
-This repository contains my personal portfolio site — a fully custom, single-page application built with vanilla HTML, CSS, and JavaScript (no frameworks).
+This repository contains my personal portfolio site - a fully custom, single-page application built with vanilla HTML, CSS, and JavaScript (no frameworks).
 
 ### Features
 
-- **18-language greeting sequence** — scroll-driven hero with per-script font fitting for Latin, CJK, Indic, Arabic, and more
-- **Loading screen** — preloads all 10 Google Font families and pre-caches all 18 frame sizes before unlocking scroll, eliminating first-scroll lag
-- **3-layer background system** — GPU-accelerated canvas grid, atmospheric CSS blobs, and micro-element parallax
-- **Light / Dark theme** — full CSS variable system, persisted to localStorage, theme-switch suppresses animations to prevent flash
-- **Hub-and-spoke tech diagram** — interactive radial layout for 6 technology domains
-- **Project architecture cards** — expand/collapse panels with inline flow diagrams
-- **UB Web Care section** — integrated business services showcase
-- **Scroll-reveal animations** — IntersectionObserver-based with stagger delays
-- **Fully accessible** — semantic HTML, ARIA labels, keyboard navigation, skip link, reduced-motion support
+- **18-language greeting sequence** - scroll-driven hero with per-script font fitting for Latin, CJK, Indic, Arabic, and more
+- **Loading screen** - preloads all 10 Google Font families and pre-caches all 18 frame sizes before unlocking scroll, eliminating first-scroll lag
+- **3-layer background system** - GPU-accelerated canvas grid, atmospheric CSS blobs, and micro-element parallax
+- **Light / Dark theme** - full CSS variable system, persisted to localStorage, theme-switch suppresses animations to prevent flash
+- **Hub-and-spoke tech diagram** - interactive radial layout for 6 technology domains
+- **Project architecture cards** - expand/collapse panels with inline flow diagrams
+- **UB Web Care section** - integrated business services showcase
+- **Scroll-reveal animations** - IntersectionObserver-based with stagger delays
+- **Fully accessible** - semantic HTML, ARIA labels, keyboard navigation, skip link, reduced-motion support
 
 ### Tech
 
@@ -49,7 +49,7 @@ This repository contains my personal portfolio site — a fully custom, single-p
 
 ## Projects
 
-### 1) PayOff — Offline Token-Based Payment Application
+### 1) PayOff - Offline Token-Based Payment Application
 > Major Project · In Progress (2025 – Present)
 
 Token-based offline payment system enabling transactions without continuous internet connectivity. Backend architecture covers token generation, local state management, validation, and cloud-ledger reconciliation when online.
@@ -67,17 +67,17 @@ Developing a multi-service mobile application that integrates logistics, mobilit
 
 ---
 
-### 3) RuleCop — University Violation Detector
+### 3) RuleCop - University Violation Detector
 > Completed Prototype
 
-Computer vision rule-violation detection system using YOLOv8 for live monitoring — 25 FPS throughput, 88% detection accuracy.
+Computer vision rule-violation detection system using YOLOv8 for live monitoring - 25 FPS throughput, 88% detection accuracy.
 
 **Tech:** `Python` `YOLOv8` `OpenCV` `MySQL`  
 [→ View Repository](https://github.com/uzzzaif/RuleCop-University-Violation-Detector)
 
 ---
 
-### 4) BrainShh — AI Mental Wellness Web App
+### 4) BrainShh - AI Mental Wellness Web App
 > Active Build
 
 AI mental wellness web app with mood tracking, journaling, guided breathing exercises, and coping strategy flows.
@@ -87,7 +87,7 @@ AI mental wellness web app with mood tracking, journaling, guided breathing exer
 
 ---
 
-### 5) Spider-Portfolio — Spider-Verse Themed Portfolio
+### 5) Spider-Portfolio - Spider-Verse Themed Portfolio
 > Live
 
 Canvas API animations, cinematic scroll effects, and custom interaction styling.
@@ -99,7 +99,7 @@ Canvas API animations, cinematic scroll effects, and custom interaction styling.
 
 ## UB Web Care
 
-**[ubwebcare.vercel.app](https://ubwebcare.vercel.app)** — my web services business offering:
+**[ubwebcare.vercel.app](https://ubwebcare.vercel.app)** - my web services business offering:
 
 | Service | Details | Price |
 |---|---|---|
@@ -107,7 +107,7 @@ Canvas API animations, cinematic scroll effects, and custom interaction styling.
 | E-Commerce Store | Full storefront with inventory & payments | From ₹39,999 |
 | Automation & AI Chatbots | n8n workflows + RAG chatbots | From ₹3,199/mo |
 | Ads Manager | 30 posts + 4 videos/month | ₹2,999/mo |
-| AI Video Production | Script to screen — promos, reels, explainers | From ₹899 |
+| AI Video Production | Script to screen - promos, reels, explainers | From ₹899 |
 | Product Video | 30-sec animated showcase | ₹599 |
 | Design Studio | Logos, brand assets, product design | From ₹499 |
 
