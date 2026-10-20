@@ -449,6 +449,7 @@
   const heroTxt     = document.getElementById("hero-lang-text");
   const heroIdent   = document.getElementById("hero-identity");
   const frameBadge  = document.getElementById("hero-frame-badge");
+  const heroScrollControl = document.querySelector(".hero-scroll-control");
 
   const DWELL_FACTOR   = 0.33; // * 100vh per language frame
   const IDENTITY_START = 0.5; // show identity when progress >= this
@@ -466,6 +467,18 @@
   }
   setDriverHeight();
   window.addEventListener("resize", setDriverHeight);
+
+  function completeHeroSequence() {
+    const heroEnd = heroDrv.offsetTop + heroDrv.offsetHeight - window.innerHeight;
+    window.scrollTo({
+      top: Math.max(0, heroEnd),
+      behavior: prefersReducedMotion ? "auto" : "smooth"
+    });
+  }
+
+  if (heroScrollControl) {
+    heroScrollControl.addEventListener("click", completeHeroSequence);
+  }
 
   // Shrink the greeting's font-size until it fits inside the box on both
   // axes, so every script (Latin, CJK, Indic, Arabic...) occupies roughly
@@ -652,6 +665,7 @@
   if (prefersReducedMotion) {
     heroIdent.classList.add("visible");
     identityShown = true;
+    heroScrollControl.classList.add("is-hidden");
     heroDrv.style.height = "100vh";
   }
 
@@ -699,11 +713,13 @@
           identityShown = true;
           heroIdent.classList.add("visible");
           heroIdent.removeAttribute("aria-hidden");
+          heroScrollControl.classList.add("is-hidden");
         }
         if (progress < IDENTITY_START - 0.05 && identityShown) {
           identityShown = false;
           heroIdent.classList.remove("visible");
           heroIdent.setAttribute("aria-hidden", "true");
+          heroScrollControl.classList.remove("is-hidden");
         }
         
         heroScrollTicking = false;
