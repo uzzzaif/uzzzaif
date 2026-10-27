@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page Not Found (404) | Mirza Uzaif Baig</title>
+  <meta name="description" content="The page you're looking for doesn't exist on uzzzaif.me." />
+  <meta name="robots" content="noindex, follow" />
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+
+  <style>
+    :root {
+      --bg: #0d0f12;
+      --card-bg: rgba(26, 30, 36, 0.75);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --text: #f0efe8;
+      --text-muted: #9ba1ad;
+      --accent: #c0392b;
+      --accent-glow: rgba(192, 57, 43, 0.35);
+      --font-display: 'Syne', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .blob {
+      position: absolute;
+      width: 480px;
+      height: 480px;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+      pointer-events: none;
+      filter: blur(60px);
+      z-index: 0;
+      opacity: 0.6;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 580px;
+      width: 100%;
+      text-align: center;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-radius: 20px;
+      padding: 3.5rem 2.5rem;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    }
+
+    .logo {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 2rem;
+      display: inline-block;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    .code-tag {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: var(--accent);
+      background: rgba(192, 57, 43, 0.12);
+      border: 1px solid rgba(192, 57, 43, 0.3);
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      display: inline-block;
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    h1 {
+      font-family: var(--font-display);
+      font-size: clamp(3.5rem, 8vw, 5.5rem);
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -0.04em;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, #ffffff 40%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 2.5rem;
+    }
+
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.85rem 1.75rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 12px;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #ffffff;
+      box-shadow: 0 4px 16px var(--accent-glow);
+      border: 1px solid transparent;
+    }
+
+    .btn-primary:hover {
+      background: #a93226;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px var(--accent-glow);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text);
+      border: 1px solid var(--card-border);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+    }
+
+    .footer-note {
+      margin-top: 3rem;
+      font-size: 0.825rem;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+    }
+  </style>
+</head>
+<body>
+  <div class="blob"></div>
+
+  <main class="container">
+    <a href="/" class="logo">UZAIF<span>.</span></a>
+    
+    <div>
+      <span class="code-tag">404 Error · Node Missing</span>
+    </div>
+
+    <h1>Lost in Space</h1>
+
+    <p>The page or resource you requested doesn't exist on <strong>uzzzaif.me</strong>. It may have been relocated or you might have followed an outdated link.</p>
+
+    <div class="btn-row">
+      <a href="/" class="btn btn-primary">
+        <i class="fas fa-home" aria-hidden="true"></i> Back to Home
+      </a>
+      <a href="https://ubwebcare.studio" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+        <i class="fas fa-briefcase" aria-hidden="true"></i> UB Web Care
+      </a>
+    </div>
+
+    <div class="footer-note">
+      Host: uzzzaif.me · Cloudflare Edge
+    </div>
+  </main>
+</body>
+</html>

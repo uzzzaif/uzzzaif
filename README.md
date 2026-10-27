@@ -6,10 +6,10 @@
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/mirza-uzaif-baig-a78556289)
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/uzzzaif)
+[![Portfolio](https://img.shields.io/badge/Portfolio-uzzzaif.me-c0392b?style=for-the-badge&logo=google-chrome&logoColor=white)](https://uzzzaif.me)
+[![UB Web Care](https://img.shields.io/badge/UB_Web_Care-0f3c29?style=for-the-badge&logoColor=white)](https://ubwebcare.studio)
 [![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:mirzauzaif07@gmail.com)
 [![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/uzzzaif)
-[![UB Web Care](https://img.shields.io/badge/UB_Web_Care-0f3c29?style=for-the-badge&logoColor=white)](https://ubwebcare.vercel.app)
-
 
 </div>
 
@@ -99,7 +99,7 @@ Canvas API animations, cinematic scroll effects, and custom interaction styling.
 
 ## UB Web Care
 
-**[ubwebcare.vercel.app](https://ubwebcare.vercel.app)** - my web services business offering:
+**[ubwebcare.studio](https://ubwebcare.studio)** - my web services business offering:
 
 | Service | Details | Price |
 |---|---|---|
@@ -174,10 +174,11 @@ Open to conversations about AI/ML, interesting projects, or collaborative work.
 | | |
 |---|---|
 | **Email** | [mirzauzaif07@gmail.com](mailto:mirzauzaif07@gmail.com) |
+| **Portfolio** | [uzzzaif.me](https://uzzzaif.me) |
 | **LinkedIn** | [mirza-uzaif-baig](https://linkedin.com/in/mirza-uzaif-baig-a78556289) |
 | **GitHub** | [uzzzaif](https://github.com/uzzzaif) |
 | **Instagram** | [uzzzaif](https://instagram.com/uzzzaif) |
-| **UB Web Care** | [ubwebcare.vercel.app](https://ubwebcare.vercel.app) |
+| **UB Web Care** | [ubwebcare.studio](https://ubwebcare.studio) |
 | **WhatsApp** | [Book an appointment](https://api.whatsapp.com/send/?phone=919449619175&text=Let%27s+book+an+appointment) |
 
 ---

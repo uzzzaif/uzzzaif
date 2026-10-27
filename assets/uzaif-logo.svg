@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#141720" />
+      <stop offset="100%" stop-color="#0a0c10" />
+    </linearGradient>
+
+    <linearGradient id="crimsonGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff5252" />
+      <stop offset="100%" stop-color="#c0392b" />
+    </linearGradient>
+
+    <linearGradient id="glyphGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="65%" stop-color="#f2f1ec" />
+      <stop offset="100%" stop-color="#dbd8ce" />
+    </linearGradient>
+
+    <filter id="crimsonGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="10" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Squircle Base -->
+  <rect x="24" y="24" width="464" height="464" rx="108" fill="url(#bgGrad)" stroke="#252b3b" stroke-width="6" />
+
+  <!-- Subtle Rim Light -->
+  <rect x="30" y="30" width="452" height="452" rx="102" fill="none" stroke="rgba(255, 255, 255, 0.07)" stroke-width="2" />
+
+  <!-- Monogram U Path -->
+  <path d="M 144 136 
+           C 144 127.16 151.16 120 160 120 
+           L 192 120 
+           C 200.84 120 208 127.16 208 136 
+           L 208 276 
+           C 208 302.51 229.49 324 256 324 
+           C 282.51 324 304 302.51 304 276 
+           L 304 224 
+           C 304 215.16 311.16 208 320 208 
+           L 352 208 
+           C 360.84 208 368 215.16 368 224 
+           L 368 276 
+           C 368 337.85 317.85 388 256 388 
+           C 194.15 388 144 337.85 144 276 
+           Z" 
+        fill="url(#glyphGrad)" />
+
+  <!-- Signature Illuminated Crimson Node (.) -->
+  <circle cx="336" cy="144" r="28" fill="url(#crimsonGrad)" filter="url(#crimsonGlow)" />
+  <circle cx="336" cy="144" r="14" fill="#ffffff" opacity="0.38" />
+</svg>
