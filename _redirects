@@ -1,4 +1,4 @@
 # Cloudflare Pages Redirects
-# Ensure resume link shortcut works
-/resume    /Uzaif_Resume.pdf    302
-/cv        /Uzaif_Resume.pdf    302
+/resume          /Uzaif_Resume.pdf          302
+/cv              /Uzaif_Resume.pdf          302
+/favicons/*      /assets/favicons/:splat    301

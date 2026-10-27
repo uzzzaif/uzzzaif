@@ -4,8 +4,17 @@
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=()
 
+/favicon.ico
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=604800
+  Access-Control-Allow-Origin: *
+
 /assets/*
   Cache-Control: public, max-age=31536000, immutable
+  Access-Control-Allow-Origin: *
+
+/assets/favicons/*
+  Cache-Control: public, max-age=31536000, immutable
+  Access-Control-Allow-Origin: *
 
 /style.css
   Cache-Control: public, max-age=86400, stale-while-revalidate=604800

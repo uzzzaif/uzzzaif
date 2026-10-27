@@ -1,4 +1,24 @@
-User-agent: *
+﻿User-agent: *
+Allow: /
+Allow: /assets/
+Allow: /favicon.ico
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Googlebot-Image
 Allow: /
 
 Sitemap: https://uzzzaif.me/sitemap.xml

@@ -7,7 +7,16 @@
   <meta name="description" content="The page you're looking for doesn't exist on uzzzaif.me." />
   <meta name="robots" content="noindex, follow" />
 
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>" />
+  <!-- Favicons -->
+  <link rel="icon" href="assets/favicons/favicon.ico" sizes="32x32" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicons/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="96x96" href="assets/favicons/favicon-96x96.png" />
+  <link rel="apple-touch-icon" href="assets/favicons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/favicons/web-app-manifest-192x192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/favicons/web-app-manifest-512x512.png" />
+  <link rel="manifest" href="assets/favicons/site.webmanifest" />
+  <meta name="theme-color" content="#c0392b" />
+
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
 
@@ -78,9 +87,23 @@
       font-weight: 800;
       letter-spacing: -0.02em;
       margin-bottom: 2rem;
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
       color: var(--text);
       text-decoration: none;
+      transition: transform 0.25s ease;
+    }
+
+    .logo:hover {
+      transform: translateY(-2px);
+    }
+
+    .logo img {
+      width: 36px;
+      height: 36px;
+      border-radius: 9px;
+      box-shadow: 0 4px 16px var(--accent-glow);
     }
 
     .logo span {
@@ -177,7 +200,10 @@
   <div class="blob"></div>
 
   <main class="container">
-    <a href="/" class="logo">UZAIF<span>.</span></a>
+    <a href="/" class="logo">
+      <img src="assets/uzaif-logo.svg" alt="Uzaif Logo" width="36" height="36" />
+      <span>UZAIF<span>.</span></span>
+    </a>
     
     <div>
       <span class="code-tag">404 Error · Node Missing</span>

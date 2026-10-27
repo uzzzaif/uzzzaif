@@ -1,0 +1,27 @@
+﻿# Mirza Uzaif Baig - AI Engineer, Full Stack Developer & Founder
+
+> Personal Portfolio: https://uzzzaif.me/
+> Agency / Studio: https://ubwebcare.studio/
+> Location: Kalaburagi, Karnataka, India
+> Email: uzaif@ubwebcare.studio / mirzauzaifbaig1@gmail.com
+> Phone: +91 94496 19175
+> WhatsApp: +91 74113 33893
+> LinkedIn: https://www.linkedin.com/in/mirza-uzaif-baig/
+> GitHub: https://github.com/uzzzaif
+
+## Professional Overview
+Mirza Uzaif Baig is an AI & ML Engineer and Full Stack Developer based in Kalaburagi, Karnataka. He builds intelligent software systems, computer vision pipelines, multi-page business applications, and automated workflows. He is the founder and solo operator of UB Web Care (ubwebcare.studio), a registered MSME studio (UDYAM-KR-15-0071676) helping small businesses, clinics, retail shops, and startups establish a fast, high-converting digital presence.
+
+## Core Initiatives & Services
+- **Starter Business Website (₹999)**: High-performance single-page business website designed for local shops, clinics, and professionals. Live in 48 hours, fully mobile-responsive, includes WhatsApp direct chat, click-to-call, and Google Maps embed.
+- **Multi-Page Application (MPA) Websites**: Bespoke business websites starting at ₹5,999 (first 6 months included) with zero template bloat, sub-second load times, and structured SEO.
+- **E-Commerce Stores**: Custom stores with UPI payment integration, product catalogs, and inventory management starting from ₹39,999.
+- **Workflow Automation & AI Chatbots**: n8n and Make workflows, RAG customer support agents, and lead-routing pipelines from ₹3,199/month.
+- **Social Ads & AI Video Showcases**: 30-second animated video showcases (₹599) and monthly ad management (₹2,999/month).
+
+## Canonical Links
+- Portfolio: https://uzzzaif.me/
+- Resume: https://uzzzaif.me/Uzaif_Resume.pdf
+- Studio Website: https://ubwebcare.studio/
+- Services: https://ubwebcare.studio/services.html
+- Pricing: https://ubwebcare.studio/pricing.html

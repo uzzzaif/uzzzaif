@@ -1,15 +1,44 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://uzzzaif.me/</loc>
-    <lastmod>2026-10-27</lastmod>
+    <lastmod>2026-10-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://uzzzaif.me/assets/og-image.png</image:loc>
+      <image:title>Mirza Uzaif Baig - AI &amp; ML Engineer Portfolio</image:title>
+      <image:caption>Portfolio overview: AI pipelines, systems architecture, and intelligent tools</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://uzzzaif.me/assets/uzaif-logo.svg</image:loc>
+      <image:title>Uzaif Brand Logo Mark</image:title>
+      <image:caption>Signature geometric monogram logo for Mirza Uzaif Baig</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://uzzzaif.me/assets/favicons/web-app-manifest-512x512.png</image:loc>
+      <image:title>Uzaif High-Resolution Site Icon</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://uzzzaif.me/assets/favicons/apple-touch-icon.png</image:loc>
+      <image:title>Uzaif Apple Touch Icon</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://uzzzaif.me/assets/UB_light_trans_SVG.svg</image:loc>
+      <image:title>UB Web Care Studio Emblem</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://uzzzaif.me/Uzaif_Resume.pdf</loc>
-    <lastmod>2026-10-27</lastmod>
+    <lastmod>2026-10-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://uzzzaif.me/llms.txt</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>
